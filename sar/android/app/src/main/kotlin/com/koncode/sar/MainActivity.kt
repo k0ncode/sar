@@ -1,0 +1,6 @@
+package com.koncode.sar
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}

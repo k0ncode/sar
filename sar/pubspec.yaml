@@ -1,0 +1,50 @@
+name: sar
+description: Schulbroschüren App der Schule am Ried
+
+publish_to: 'none' # Do not remove!
+
+version: 1.1.0+1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_launcher_icons: ^0.9.0 # Launcher Icons
+  url_launcher: ^6.0.2 # URLs im Browser öffnen
+  transparent_image: ^2.0.0 # Bilder Fade-in
+  package_info: ^2.0.0 # Version in der App erhalten
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/icon.png"
+# Command um Launcher Icon zu generieren:
+# flutter pub run flutter_launcher_icons:main
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
