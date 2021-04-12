@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:transparent_image/transparent_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class Video extends StatelessWidget {
   final String youtubeUrl;
@@ -17,9 +17,8 @@ class Video extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 16 / 9,
-              child: FadeInImage(
-                image: NetworkImage("https://img.youtube.com/vi/" + id + "/hqdefault.jpg"),
-                placeholder: MemoryImage(kTransparentImage),
+              child: CachedNetworkImage(
+                imageUrl: "https://img.youtube.com/vi/" + id + "/hqdefault.jpg",
                 fit: BoxFit.fitWidth,
                 fadeInDuration: Duration(milliseconds: 100),
               ),
