@@ -17,31 +17,41 @@ class ArticleCard extends StatelessWidget {
           elevation: 2,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           child: InkWell(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+            child: Stack(
               children: [
-                SizedBox(height: 8),
-                ListTile(
-                  title: Text(title),
-                  subtitle: Text(text),
-                  trailing: Icon(Icons.chevron_right, color: sarBlue),
-                ),
-                imageIndex.isNotEmpty
-                    ? ClipRRect(
-                        child: Image.asset(
-                          "assets/image" + imageIndex + ".jpg",
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(height: 8),
+                    ListTile(
+                      title: Text(title),
+                      subtitle: Text(text),
+                      trailing: Icon(Icons.chevron_right, color: sarBlue),
+                    ),
+                    if (imageIndex.isNotEmpty)
+                      Column(children: [
+                        SizedBox(height: 8),
+                        Ink(
                           height: 225,
                           width: double.infinity,
-                          fit: BoxFit.fitWidth,
-                          alignment: Alignment.bottomCenter,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/image" + imageIndex + ".jpg"),
+                              fit: BoxFit.fitWidth,
+                              alignment: Alignment.bottomCenter,
+                            ),
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
+                          ),
                         ),
-                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(8), bottomRight: Radius.circular(8)),
-                      )
-                    : SizedBox(height: 8),
+                      ])
+                    else
+                      SizedBox(height: 8),
+                  ],
+                ),
               ],
             ),
-            borderRadius: BorderRadius.circular(8),
             onTap: () => navigateTo(article, context),
+            borderRadius: BorderRadius.circular(8),
           ),
         ),
         SizedBox(height: 4),
