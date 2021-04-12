@@ -16,8 +16,9 @@ class ArticleCard extends StatelessWidget {
         Card(
           elevation: 2,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          child: InkWell(
-            child: Column(
+          child: Stack(children: [
+            // Widget:
+            Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox(height: 8),
@@ -40,9 +41,17 @@ class ArticleCard extends StatelessWidget {
                     : SizedBox(height: 8),
               ],
             ),
-            borderRadius: BorderRadius.circular(8),
-            onTap: () => navigateTo(article, context),
-          ),
+            // Splash Effekt:
+            Positioned.fill(
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  onTap: () {}, // TODO: einfügen
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+            ),
+          ]),
         ),
         SizedBox(height: 4),
       ],
