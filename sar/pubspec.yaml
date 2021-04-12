@@ -15,8 +15,8 @@ dependencies:
 
   flutter_launcher_icons: ^0.9.0 # Launcher Icons
   url_launcher: ^6.0.2 # URLs im Browser öffnen
-  transparent_image: ^2.0.0 # Bilder Fade-in
   package_info: ^2.0.0 # Version in der App erhalten
+  cached_network_image: ^3.0.0 # Video Thumbnails cachen
 
 dev_dependencies:
   flutter_test:
@@ -27,8 +27,7 @@ flutter_icons:
   android: "launcher_icon"
   ios: false
   image_path: "assets/icon.png"
-# Command um Launcher Icon zu generieren:
-# flutter pub run flutter_launcher_icons:main
+# Command um Launcher Icon zu generieren: flutter pub run flutter_launcher_icons:main
 
 
 flutter:
