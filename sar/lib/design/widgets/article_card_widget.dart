@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:animations/animations.dart';
 import 'package:sar/design/theme.dart';
-import 'package:sar/routes.dart';
+
+/* 
+- komplettes Widget neubauen
+- Splash nicht so wichtig, sieht man eh nicht
+- Wie die width von OpenContainer ändern?
+*/
 
 class ArticleCard extends StatelessWidget {
   final String title; // Überschrift der Card
@@ -13,10 +19,8 @@ class ArticleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Card(
-          elevation: 2,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          child: InkWell(
+        OpenContainer(
+          closedBuilder: (context, openPage) => InkWell(
             child: Stack(
               children: [
                 Column(
@@ -50,11 +54,14 @@ class ArticleCard extends StatelessWidget {
                 ),
               ],
             ),
-            onTap: () => navigateTo(article, context),
+            onTap: () => openPage(),
             borderRadius: BorderRadius.circular(8),
           ),
+          closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          closedElevation: 2,
+          openBuilder: (context, openPage) => article,
         ),
-        SizedBox(height: 4),
+        SizedBox(height: 16),
       ],
     );
   }

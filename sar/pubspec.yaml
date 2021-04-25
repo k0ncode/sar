@@ -17,6 +17,7 @@ dependencies:
   url_launcher: ^6.0.2 # URLs im Browser öffnen
   package_info: ^2.0.0 # Version in der App erhalten
   cached_network_image: ^3.0.0 # Video Thumbnails cachen
+  animations: ^2.0.0
 
 dev_dependencies:
   flutter_test:
