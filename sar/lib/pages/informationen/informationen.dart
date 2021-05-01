@@ -11,22 +11,24 @@ class Informationen extends StatelessWidget {
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              Card(
-                elevation: 2,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    SizedBox(height: 8),
-                    ListTile(title: Text("SaR im Video"), subtitle: Text("Wir stellen uns vor")),
-                    Video("https://youtu.be/ANRX-aR9IM0"),
-                  ],
-                ),
-              ),
-              SizedBox(height: 8),
+              // TODO: VideoCard wieder einfügen
+
+              // Card(
+              //   elevation: 2,
+              //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              //   child: Column(
+              //     mainAxisSize: MainAxisSize.min,
+              //     children: [
+              //       SizedBox(height: 8),
+              //       ListTile(title: Text("SaR im Video"), subtitle: Text("Wir stellen uns vor")),
+              //       Video("https://youtu.be/ANRX-aR9IM0"),
+              //     ],
+              //   ),
+              // ),
+              // SizedBox(height: 8),
               ArticleCard(
                 title: "Kooperative Gesamtschule",
                 text: "Was ist das?",
