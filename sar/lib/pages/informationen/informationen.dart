@@ -14,21 +14,22 @@ class Informationen extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              // TODO: VideoCard wieder einfügen
-
-              // Card(
-              //   elevation: 2,
-              //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-              //   child: Column(
-              //     mainAxisSize: MainAxisSize.min,
-              //     children: [
-              //       SizedBox(height: 8),
-              //       ListTile(title: Text("SaR im Video"), subtitle: Text("Wir stellen uns vor")),
-              //       Video("https://youtu.be/ANRX-aR9IM0"),
-              //     ],
-              //   ),
-              // ),
-              // SizedBox(height: 8),
+              Padding(
+                padding: EdgeInsets.only(bottom: 12),
+                child: Card(
+                  margin: EdgeInsets.zero,
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SizedBox(height: 4),
+                      ListTile(title: Text("SaR im Video"), subtitle: Text("Wir stellen uns vor")),
+                      Video("https://youtu.be/ANRX-aR9IM0"),
+                    ],
+                  ),
+                ),
+              ),
               ArticleCard(
                 title: "Kooperative Gesamtschule",
                 text: "Was ist das?",
