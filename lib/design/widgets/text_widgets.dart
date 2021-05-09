@@ -5,17 +5,13 @@ import 'package:url_launcher/url_launcher.dart';
 // TextStyles:
 TextStyle? headline1TextStyle(context) => Theme.of(context).textTheme.headline5;
 TextStyle? headline2TextStyle(context) => Theme.of(context).textTheme.headline6;
-TextStyle bodyTextStyle(context) =>
-    Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16);
-TextStyle linkTextStyle(context) =>
-    Theme.of(context).textTheme.bodyText2!.copyWith(
-        fontSize: 16, color: sarBlue, decoration: TextDecoration.underline);
+TextStyle bodyTextStyle(context) => Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16);
+TextStyle linkTextStyle(context) => Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16, color: sarBlue, decoration: TextDecoration.underline);
 
 // Widget für Artikelseiten (Scaffold):
 class ArticlePage extends StatelessWidget {
   final String appBarTitle; // Text in der AppBar
-  final List<Widget>
-      content; // Inhalt des Textes als Liste aus Widgets z.B. Paragraphs
+  final List<Widget> content; // Inhalt des Textes als Liste aus Widgets z.B. Paragraphs
   const ArticlePage({required this.appBarTitle, required this.content});
 
   @override
@@ -100,8 +96,7 @@ class BulletPoint extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SelectableText("•  ", style: bodyTextStyle(context)),
-            Flexible(
-                child: SelectableText(text, style: bodyTextStyle(context))),
+            Flexible(child: SelectableText(text, style: bodyTextStyle(context))),
           ],
         ),
         isLast ? SizedBox(height: 8) : SizedBox()
@@ -120,8 +115,7 @@ class ArticleImage extends StatelessWidget {
     return Column(
       children: [
         ClipRRect(
-          child: Image.asset("assets/image" + imageNumber + ".jpg",
-              fit: BoxFit.fitWidth),
+          child: Image.asset("assets/images/image" + imageNumber + ".jpg", fit: BoxFit.fitWidth),
           borderRadius: BorderRadius.circular(8),
         ),
         SizedBox(height: 8),

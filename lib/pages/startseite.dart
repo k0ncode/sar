@@ -23,7 +23,7 @@ class Startseite extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Image.asset(
-                "assets/image00.png",
+                "assets/images/image00.png",
                 fit: BoxFit.fitWidth,
               ),
             ),

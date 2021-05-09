@@ -19,7 +19,7 @@ class ArticleCard extends StatelessWidget {
             children: [
               if (imageIndex.isNotEmpty)
                 Image.asset(
-                  "assets/image" + imageIndex + ".jpg",
+                  "assets/images/image" + imageIndex + ".jpg",
                   width: 112,
                   height: 112,
                   fit: BoxFit.cover,
