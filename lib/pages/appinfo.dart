@@ -17,7 +17,7 @@ class AppInfo extends StatelessWidget {
           children: [
             Spacer(),
             ClipRRect(
-              child: Image.asset("assets/icon.png", width: 120),
+              child: Image.asset("assets/images/icon.png", width: 120),
               borderRadius: BorderRadius.circular(24),
             ),
             SizedBox(height: 24),
