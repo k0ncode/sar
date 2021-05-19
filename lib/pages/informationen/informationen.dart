@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sar/design/widgets/article_card_widget.dart';
+import 'package:sar/design/widgets/text_page.dart';
 import 'package:sar/design/widgets/video_widget.dart';
 import 'package:sar/routes.dart';
 
@@ -30,6 +31,10 @@ class Informationen extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TextPage("informationen/3_gymnasialzweig.txt"))),
+              child: Text("OPEN"),
             ),
             ArticleCard(
               title: "Kooperative Gesamtschule",
