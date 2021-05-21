@@ -33,7 +33,7 @@ class AppInfo extends StatelessWidget {
                   Icon(Icons.launch),
                 ],
               ),
-              onPressed: () => navigateTo(TextPage("impressum.txt"), context),
+              onPressed: () => navigateTo(Impressum(), context),
               style: TextButton.styleFrom(primary: sarBlue),
             ),
             Spacer(),
@@ -43,5 +43,12 @@ class AppInfo extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class Impressum extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return TextPage(textFile: "impressum.txt", appBarTitle: "Impressum");
   }
 }
