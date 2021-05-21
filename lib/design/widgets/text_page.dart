@@ -7,7 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 class TextPage extends StatelessWidget {
   final String textFile;
-  const TextPage(this.textFile);
+  final String appBarTitle;
+  const TextPage({required this.textFile, this.appBarTitle = ""});
 
   // Funktion, die den Text aus der Datei einliest:
   Future<String> getText(textFile) async {
@@ -20,7 +21,7 @@ class TextPage extends StatelessWidget {
     return FutureBuilder(
       future: getText(textFile),
       builder: (context, snapshot) => Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(title: Text(appBarTitle)),
         body: snapshot.hasData
             ? Markdown(
                 data: snapshot.data.toString(), // Text aus der Datei dem Markdown Widget zuweisen
