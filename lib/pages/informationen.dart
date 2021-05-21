@@ -31,10 +31,6 @@ class Informationen extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TextPage("informationen/3_gymnasialzweig.txt"))),
-              child: Text("OPEN"),
-            ),
             InformationCard(
               title: "Über die Schule am Ried",
               text: "Wir über uns",
