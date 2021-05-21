@@ -45,7 +45,7 @@ class InformationCard extends StatelessWidget {
         ),
         closedElevation: 2,
         closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        openBuilder: (context, openPage()) => TextPage(textFile),
+        openBuilder: (context, openPage()) => TextPage("informationen/" + textFile),
       ),
       padding: const EdgeInsets.only(bottom: 12),
     );

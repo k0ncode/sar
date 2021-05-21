@@ -3,13 +3,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// TODO: Link TextStyle ändern: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16, color: sarBlue, decoration: TextDecoration.underline)
+
 class TextPage extends StatelessWidget {
   final String textFile;
   const TextPage(this.textFile);
 
   // Funktion, die den Text aus der Datei einliest:
   Future<String> getText(textFile) async {
-    String text = await rootBundle.loadString("./assets/texts/informationen/" + textFile);
+    String text = await rootBundle.loadString("./assets/texts/" + textFile);
     return text;
   }
 

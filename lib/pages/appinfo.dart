@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sar/main.dart';
 import 'package:sar/design/theme.dart';
-import 'package:sar/design/widgets/text_widgets.dart';
-import 'package:sar/routes.dart';
+import 'navigate_to_function.dart';
+import 'package:sar/design/widgets/text_page.dart';
 
 class AppInfo extends StatelessWidget {
   @override
@@ -33,7 +33,7 @@ class AppInfo extends StatelessWidget {
                   Icon(Icons.launch),
                 ],
               ),
-              onPressed: () => navigateTo(Impressum(), context),
+              onPressed: () => navigateTo(TextPage("impressum.txt"), context),
               style: TextButton.styleFrom(primary: sarBlue),
             ),
             Spacer(),
@@ -46,53 +46,60 @@ class AppInfo extends StatelessWidget {
   }
 }
 
-class Impressum extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Impressum")),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: SelectableText(
-            """
-Verantwortlich für Google App:
+// class Impressum extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return TextPage("impressum.txt");
+//   }
+// }
 
-Schule am Ried
-Barbarossastr. 65
-60388 Frankfurt a. M.
+// class Impressum extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Impressum")),
+//       body: SingleChildScrollView(
+//         physics: BouncingScrollPhysics(),
+//         child: Padding(
+//           padding: const EdgeInsets.all(16),
+//           child: SelectableText(
+//             """
+// Verantwortlich für Google App:
 
-Schulleiter:
-Christof Gans
+// Schule am Ried
+// Barbarossastr. 65
+// 60388 Frankfurt a. M.
 
-Kontakt:
-E-Mail: poststelle.Schule-am-Ried@stadt-frankfurt.de
-E-Mail: info@schule-am-ried.org
-Telefon: 069 – 212 41256
+// Schulleiter:
+// Christof Gans
 
-Schulnummer: 6055
+// Kontakt:
+// E-Mail: poststelle.Schule-am-Ried@stadt-frankfurt.de
+// E-Mail: info@schule-am-ried.org
+// Telefon: 069 – 212 41256
 
-Schulträger:
-Staatliches Schulamt der Stadt Frankfurt am Main
-Stuttgarter Straße 18-24
-60329 Frankfurt am Main
-Telefon: 069 – 389 89 01
-e-Mail: poststelle@f.ssa.hessen.de
+// Schulnummer: 6055
 
-Inhaltlich Verantwortlicher gemäß § 10 Absatz 3 MDStV:
-Oliver Sust
+// Schulträger:
+// Staatliches Schulamt der Stadt Frankfurt am Main
+// Stuttgarter Straße 18-24
+// 60329 Frankfurt am Main
+// Telefon: 069 – 389 89 01
+// e-Mail: poststelle@f.ssa.hessen.de
 
-Mit dem Urteil vom 12. Mai 1998 – 312 O 85/98 – „Haftung für Links“ hat das Landgericht Hamburg entschieden, dass man durch die Anbringung eines Links die Inhalte der gelinkten Seite ggf. mit zu verantworten hat. Dies kann nur dadurch verhindert werden, dass man sich ausdrücklich von diesen Inhalten distanziert.
+// Inhaltlich Verantwortlicher gemäß § 10 Absatz 3 MDStV:
+// Oliver Sust
 
-„Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
-Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.“
-""",
-            style: bodyTextStyle(context),
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ),
-    );
-  }
-}
+// Mit dem Urteil vom 12. Mai 1998 – 312 O 85/98 – „Haftung für Links“ hat das Landgericht Hamburg entschieden, dass man durch die Anbringung eines Links die Inhalte der gelinkten Seite ggf. mit zu verantworten hat. Dies kann nur dadurch verhindert werden, dass man sich ausdrücklich von diesen Inhalten distanziert.
+
+// „Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
+// Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.“
+// """,
+//             style: bodyTextStyle(context),
+//             textAlign: TextAlign.center,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
