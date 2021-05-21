@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
-import 'package:sar/design/theme.dart';
+import 'package:sar/theme.dart';
+import 'package:sar/widgets/text_page_widget.dart';
 
-class ArticleCard extends StatelessWidget {
+class InformationCard extends StatelessWidget {
   final String title; // Überschrift der Card
   final String text; // Text der Card
   final String imageIndex; // Bild der Card (optinal)
-  final Widget article; // Seite die geöffnet werden soll
-  const ArticleCard({this.title = "Titel", this.text = "Text...", this.imageIndex = "", required this.article});
+  final String textFile; // Text Datei, aus der der Text stammen soll
+  const InformationCard({this.title = "Titel", this.text = "Text...", this.imageIndex = "", required this.textFile});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,7 @@ class ArticleCard extends StatelessWidget {
         ),
         closedElevation: 2,
         closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        openBuilder: (context, openPage()) => article,
+        openBuilder: (context, openPage()) => TextPage(textFile: "informationen/" + textFile, appBarTitle: title),
       ),
       padding: const EdgeInsets.only(bottom: 12),
     );

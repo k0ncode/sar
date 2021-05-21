@@ -18,6 +18,7 @@ dependencies:
   package_info: ^2.0.0 # Version in der App erhalten
   cached_network_image: ^3.0.0 # Video Thumbnails cachen
   animations: ^2.0.0
+  flutter_markdown: ^0.6.2
 
 dev_dependencies:
   flutter_test:
@@ -36,6 +37,8 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/texts/
+    - assets/texts/informationen/
 
   # fonts:
   #   - family: Schyler
