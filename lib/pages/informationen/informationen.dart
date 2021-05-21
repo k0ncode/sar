@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sar/design/widgets/article_card_widget.dart';
+import 'package:sar/design/widgets/information_card_widget.dart';
 import 'package:sar/design/widgets/text_page.dart';
 import 'package:sar/design/widgets/video_widget.dart';
-import 'package:sar/routes.dart';
 
 class Informationen extends StatelessWidget {
   @override
@@ -36,90 +35,95 @@ class Informationen extends StatelessWidget {
               onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TextPage("informationen/3_gymnasialzweig.txt"))),
               child: Text("OPEN"),
             ),
-            ArticleCard(
-              title: "Kooperative Gesamtschule",
-              text: "Was ist das?",
-              article: KooperativeGesamtschule(),
-            ),
-            ArticleCard(
+            InformationCard(
               title: "Über die Schule am Ried",
               text: "Wir über uns",
               imageIndex: "01",
-              article: UeberSar(),
+              textFile: "1_ueber_sar.txt",
             ),
-            ArticleCard(
+            InformationCard(
+              title: "Kooperative Gesamtschule",
+              text: "Was ist das?",
+              textFile: "2_kgs.txt",
+            ),
+            InformationCard(
               title: "Gymnasialzweig (Gynmasium)",
               text: "Der Gymnasialzweig der Schule am Ried",
-              article: Gymnasialzweig(),
+              textFile: "3_gymnasialzweig.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Realschulzweig (Realschule)",
               text: "Der Realschulzweig der Schule am Ried",
-              article: Realschulzweig(),
+              textFile: "4_realschulzweig.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Hauptschulzweig (Hauptschule)",
               text: "Der Hauptschulzweig der Schule am Ried",
-              article: Hauptschulzweig(),
+              textFile: "5_hauptschulzweig.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Gymnasiale Oberstufe",
               text: "Die gymnasiale Oberstufe der Schule am Ried",
-              article: GymnasialeOberstufe(),
+              textFile: "6_oberstufe.txt",
             ),
-            ArticleCard(
+            InformationCard(
+              title: "Schwerpunktgruppen",
+              text: "Schwerpunktgruppen an der Schule am Ried",
+              textFile: "7_schwerpunktgruppen.txt",
+            ),
+            InformationCard(
               title: "Musik",
               text: "Musikalische Angebote an der Schule am Ried",
               imageIndex: "09",
-              article: Musik(),
+              textFile: "8_musik.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Naturwissenschaften und MINT-EC",
               text: "Naturwissenschaftliche Angebote und MINT-EC an der Schule am Ried",
               imageIndex: "13",
-              article: NawiUndMint(),
+              textFile: "9_nawi_und_mint.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Sport",
               text: "Sportliche Angebote an der Schule am Ried",
               imageIndex: "18",
-              article: Sport(),
+              textFile: "10_sport.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Fremdsprachen",
               text: "Fremdsprachen und Austausche an der Schule am Ried",
-              article: Fremdsprachen(),
+              textFile: "11_fremdsprachen.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Berufsorientierung",
               text: "Berufsorientierung an der Schule am Ried",
-              article: Berufsorientierung(),
+              textFile: "12_berufsorientierung.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Ganztagsschule",
               text: "Die Schule am Ried als Ganztagsschule",
               imageIndex: "31",
-              article: Ganztagsschule(),
+              textFile: "13_ganztagsschule.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Jugendhilfe",
               text: "Die Jugendhilfe an der Schule am Ried",
-              article: Jugendhilfe(),
+              textFile: "14_jugendhilfe.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Schulleitung",
               text: "Die Schulleitung der Schule am Ried",
-              article: Schulleitung(),
+              textFile: "15_schulleitung.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Elternbeirat",
               text: "Der Elternbeirat der Schule am Ried",
-              article: Elternbeirat(),
+              textFile: "16_elternbeirat.txt",
             ),
-            ArticleCard(
+            InformationCard(
               title: "Anfahrt",
               text: "Karte und Informationen zur Anfahrt",
-              article: Anfahrt(),
+              textFile: "17_anfahrt.txt",
             ),
           ],
         ),

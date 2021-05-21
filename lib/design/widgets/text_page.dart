@@ -9,7 +9,7 @@ class TextPage extends StatelessWidget {
 
   // Funktion, die den Text aus der Datei einliest:
   Future<String> getText(textFile) async {
-    String text = await rootBundle.loadString("./assets/texts/" + textFile);
+    String text = await rootBundle.loadString("./assets/texts/informationen/" + textFile);
     return text;
   }
 
@@ -28,7 +28,7 @@ class TextPage extends StatelessWidget {
                 styleSheet: MarkdownStyleSheet(
                   p: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16),
                   blockSpacing: 12,
-                  listBulletPadding: EdgeInsets.zero,
+                  listBulletPadding: const EdgeInsets.all(0),
                 ),
                 // Custom Bilder mit rounded Edges:
                 imageBuilder: (Uri uri, _, __) {
