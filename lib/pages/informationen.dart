@@ -73,7 +73,7 @@ class Informationen extends StatelessWidget {
               textFile: "8_musik.txt",
             ),
             InformationCard(
-              title: "Naturwissenschaften und MINT-EC",
+              title: "NaWi und MINT-EC",
               text: "Naturwissenschaftliche Angebote und MINT-EC an der Schule am Ried",
               imageIndex: "13",
               textFile: "9_nawi_und_mint.txt",
