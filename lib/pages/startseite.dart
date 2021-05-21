@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sar/theme.dart';
-import 'package:sar/pages/navigate_to_function.dart';
+import 'package:sar/pages/navigate_to.dart';
 import 'package:sar/pages/willkommen.dart';
 import 'package:sar/pages/informationen.dart';
 import 'package:sar/pages/news.dart';

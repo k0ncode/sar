@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sar/main.dart';
 import 'package:sar/theme.dart';
-import 'navigate_to_function.dart';
-import 'package:sar/widgets/text_page.dart';
+import 'navigate_to.dart';
+import 'package:sar/widgets/text_page_widget.dart';
 
 class AppInfo extends StatelessWidget {
   @override
