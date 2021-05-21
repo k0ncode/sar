@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
-import 'package:sar/design/theme.dart';
-import 'package:sar/design/widgets/text_page.dart';
+import 'package:sar/theme.dart';
+import 'package:sar/widgets/text_page.dart';
 
 class InformationCard extends StatelessWidget {
   final String title; // Überschrift der Card

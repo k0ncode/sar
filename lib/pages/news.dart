@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sar/design/widgets/text_page.dart';
+import 'package:sar/widgets/text_page.dart';
 
 class News extends StatelessWidget {
   @override

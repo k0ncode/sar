@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info/package_info.dart';
-import 'package:sar/design/theme.dart';
+import 'package:sar/theme.dart';
 import 'package:sar/pages/startseite.dart';
 
 String version = "";

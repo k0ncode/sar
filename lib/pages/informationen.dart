@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sar/design/widgets/information_card_widget.dart';
-import 'package:sar/design/widgets/text_page.dart';
-import 'package:sar/design/widgets/video_widget.dart';
+import 'package:sar/widgets/information_card_widget.dart';
+import 'package:sar/widgets/video_widget.dart';
 
 class Informationen extends StatelessWidget {
   @override
