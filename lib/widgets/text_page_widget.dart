@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-// TODO: Link TextStyle ändern: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16, color: sarBlue, decoration: TextDecoration.underline)
+import 'package:sar/theme.dart';
 
 class TextPage extends StatelessWidget {
   final String textFile;
@@ -32,6 +31,7 @@ class TextPage extends StatelessWidget {
                   p: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16),
                   blockSpacing: 12,
                   listBulletPadding: const EdgeInsets.all(0),
+                  a: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16, color: sarBlue, decoration: TextDecoration.underline),
                 ),
                 // Custom Bilder mit rounded Edges:
                 imageBuilder: (Uri uri, _, __) {
