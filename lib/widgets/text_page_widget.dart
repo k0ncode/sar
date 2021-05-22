@@ -21,6 +21,7 @@ class TextPage extends StatelessWidget {
       future: getText(textFile),
       builder: (context, snapshot) => Scaffold(
         appBar: AppBar(title: Text(appBarTitle)),
+        backgroundColor: Colors.white,
         body: snapshot.hasData
             ? Markdown(
                 data: snapshot.data.toString(), // Text aus der Datei dem Markdown Widget zuweisen
