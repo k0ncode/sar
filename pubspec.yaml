@@ -27,8 +27,10 @@ dev_dependencies:
 
 flutter_icons:
   android: "launcher_icon"
-  ios: false
-  image_path: "assets/icon.png"
+  ios: true
+  image_path: "assets/icon/icon.png"
+  adaptive_icon_foreground: "assets/icon/icon_foreground.png"
+  adaptive_icon_background: "#ff253185"
 # Command um Launcher Icon zu generieren: flutter pub run flutter_launcher_icons:main
 
 
@@ -39,6 +41,7 @@ flutter:
     - assets/images/
     - assets/texts/
     - assets/texts/informationen/
+    - assets/icon/
 
   # fonts:
   #   - family: Schyler
