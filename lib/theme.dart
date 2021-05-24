@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 const Color sarBlue = Color(0xff253185); // Farbe vom SaR Logo
