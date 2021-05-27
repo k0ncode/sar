@@ -3,7 +3,7 @@ description: Schulbroschüren App der Schule am Ried
 
 publish_to: 'none' # Do not remove!
 
-version: 1.2.0+1 # Hier Version der App ändern
+version: 1.3.0+1 # Hier Version der App ändern
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
