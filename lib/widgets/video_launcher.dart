@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-class Video extends StatelessWidget {
+class VideoLauncher extends StatelessWidget {
   final String youtubeUrl;
-  Video(this.youtubeUrl);
+  VideoLauncher(this.youtubeUrl);
 
   @override
   Widget build(BuildContext context) {
