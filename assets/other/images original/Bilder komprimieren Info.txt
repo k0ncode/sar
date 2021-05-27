@@ -1,0 +1,3 @@
+- Caesium Image Compressor
+- Breite auf 1080px begrenzen (Verhältnis behalten)
+- Endgröße unter 100kb!
