@@ -24,7 +24,7 @@ class Informationen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     SizedBox(height: 4),
-                    ListTile(title: Text("SaR im Video"), subtitle: Text("Wir stellen uns vor")),
+                    ListTile(title: Text("Die Schule am Ried im Video"), subtitle: Text("Wir stellen uns vor")),
                     Video("https://youtu.be/ANRX-aR9IM0"),
                   ],
                 ),
@@ -63,7 +63,7 @@ class Informationen extends StatelessWidget {
             ),
             InformationCard(
               title: "Schwerpunktgruppen",
-              text: "Schwerpunktgruppen an der Schule am Ried",
+              text: "Informationen zu den Schwerpunktgruppen",
               textFile: "7_schwerpunktgruppen.txt",
             ),
             InformationCard(
@@ -86,12 +86,12 @@ class Informationen extends StatelessWidget {
             ),
             InformationCard(
               title: "Fremdsprachen",
-              text: "Fremdsprachen und Austausche an der Schule am Ried",
+              text: "Fremdsprachen und Austauschprogramme",
               textFile: "11_fremdsprachen.txt",
             ),
             InformationCard(
               title: "Berufsorientierung",
-              text: "Berufsorientierung an der Schule am Ried",
+              text: "Berufsorientierung und Zukunftsaussichten",
               textFile: "12_berufsorientierung.txt",
             ),
             InformationCard(
@@ -102,17 +102,17 @@ class Informationen extends StatelessWidget {
             ),
             InformationCard(
               title: "Jugendhilfe",
-              text: "Die Jugendhilfe an der Schule am Ried",
+              text: "Die schuleigene Jugenhilfe",
               textFile: "14_jugendhilfe.txt",
             ),
             InformationCard(
               title: "Schulleitung",
-              text: "Die Schulleitung der Schule am Ried",
+              text: "Schulleitung, Sekreteriat und Hausverwaltung",
               textFile: "15_schulleitung.txt",
             ),
             InformationCard(
               title: "Elternbeirat",
-              text: "Der Elternbeirat der Schule am Ried",
+              text: "Der Schulelternbeirat",
               textFile: "16_elternbeirat.txt",
             ),
             InformationCard(
