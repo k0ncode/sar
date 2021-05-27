@@ -1,3 +1,3 @@
-# SaR Virtuelle Schulbroschüre
+# sar
 
-Schulbroschüren App der Schule am Ried.
+Schulbroschüren App der Schule am Ried
