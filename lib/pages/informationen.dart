@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:sar/widgets/information_card_widget.dart';
-import 'package:sar/widgets/video_widget.dart';
+import 'package:sar/widgets/information_card.dart';
+import 'package:sar/widgets/page_scrollbar.dart';
+import 'package:sar/widgets/video_launcher.dart';
 
 class Informationen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Informationen")),
-      body: RawScrollbar(
-        thickness: 6,
-        thumbColor: Colors.black.withOpacity(0.2),
+      body: PageScrollbar(
         child: ListView(
           padding: const EdgeInsets.all(16),
           physics: BouncingScrollPhysics(),
@@ -25,7 +24,7 @@ class Informationen extends StatelessWidget {
                   children: [
                     SizedBox(height: 4),
                     ListTile(title: Text("Die Schule am Ried im Video"), subtitle: Text("Wir stellen uns vor")),
-                    Video("https://youtu.be/ANRX-aR9IM0"),
+                    VideoLauncher("https://youtu.be/ANRX-aR9IM0"),
                   ],
                 ),
               ),
