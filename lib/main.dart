@@ -24,7 +24,7 @@ void main() async {
   PackageInfo packageInfo = await PackageInfo.fromPlatform();
   version = packageInfo.version.substring(0, 3);
 
-  // App starten
+  // App starten:
   runApp(
     MaterialApp(
       theme: theme,
