@@ -13,41 +13,48 @@ class InformationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
       child: OpenContainer(
-        closedBuilder: (context, openPage()) => Container(
-          width: double.infinity,
-          child: Row(
-            children: [
-              if (imageIndex.isNotEmpty)
-                Image.asset(
-                  "assets/images/image" + imageIndex + ".jpg",
-                  width: 112,
-                  height: 112,
-                  fit: BoxFit.cover,
-                ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: ListTile(
-                    title: Text(title),
-                    subtitle: Text(
-                      text,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: (imageIndex.isNotEmpty) ? 3 : 1,
-                    ),
-                  ),
-                ),
-              ),
-              Icon(Icons.keyboard_arrow_right, color: sarBlue),
-              SizedBox(width: 8),
-            ],
-          ),
-        ),
         closedElevation: 2,
         closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         openBuilder: (context, openPage()) => TextPage(textFile: "informationen/" + textFile, appBarTitle: title),
+        closedBuilder: (context, openPage()) => SizedBox(
+          width: double.infinity,
+          child: InkWell(
+            onTap: openPage,
+            child: Row(
+              children: [
+                if (imageIndex.isNotEmpty)
+                  Ink(
+                    width: 112,
+                    height: 112,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/image" + imageIndex + ".jpg"),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: ListTile(
+                      title: Text(title),
+                      subtitle: Text(
+                        text,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: (imageIndex.isNotEmpty) ? 3 : 1,
+                      ),
+                    ),
+                  ),
+                ),
+                Icon(Icons.keyboard_arrow_right, color: sarBlue),
+                SizedBox(width: 8),
+              ],
+            ),
+          ),
+        ),
       ),
-      padding: const EdgeInsets.only(bottom: 12),
     );
   }
 }
