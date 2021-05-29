@@ -21,7 +21,7 @@ class AppInfo extends StatelessWidget {
               borderRadius: BorderRadius.circular(24),
             ),
             SizedBox(height: 24),
-            Text("SaR Virtuelle Schulbroschüre"),
+            Text("SaR Schulbroschüren App"),
             Text("Version " + version),
             SizedBox(height: 16),
             TextButton(
