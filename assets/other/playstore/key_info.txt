@@ -1,2 +1,0 @@
-Key alias: sar_app_key
-Passwort (für beide Abfragen): sar-app.K0n
