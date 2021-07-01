@@ -1,4 +1,4 @@
-# sar
+# sar.app
 
 Schulbroschüren App der Schule am Ried
 
