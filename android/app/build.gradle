@@ -64,6 +64,10 @@ android {
             applicationIdSuffix ".debug"
         }
     }
+
+    ndk {
+        debugSymbolLevel 'FULL'
+    }
 }
 
 flutter {
