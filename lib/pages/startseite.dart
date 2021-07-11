@@ -11,10 +11,10 @@ class Startseite extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SaR Schulbroschüre"),
+        title: const Text("SaR Schulbroschüre"),
         actions: [
           IconButton(
-            icon: Icon(Icons.info_outlined),
+            icon: const Icon(Icons.info_outlined),
             onPressed: () => navigateTo(AppInfo(), context),
             tooltip: "App Info",
           ),
@@ -38,20 +38,20 @@ class Startseite extends StatelessWidget {
               children: [
                 ElevatedButton(
                   style: roundedButtonStyle,
-                  child: Text("WILLKOMMEN"),
                   onPressed: () => navigateTo(Willkommen(), context),
+                  child: const Text("WILLKOMMEN"),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 ElevatedButton(
                   style: roundedButtonStyle,
-                  child: Text("INFORMATIONEN"),
                   onPressed: () => navigateTo(Informationen(), context),
+                  child: const Text("INFORMATIONEN"),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 ElevatedButton(
                   style: roundedButtonStyle,
-                  child: Text("NEWS"),
                   onPressed: () => navigateTo(News(), context),
+                  child: const Text("NEWS"),
                 ),
               ],
             ),

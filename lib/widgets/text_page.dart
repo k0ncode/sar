@@ -11,8 +11,8 @@ class TextPage extends StatelessWidget {
   const TextPage({required this.textFile, this.appBarTitle = ""});
 
   // Funktion, die den Text aus der Datei einliest:
-  Future<String> getText(textFile) async {
-    String text = await rootBundle.loadString("./assets/texts/" + textFile);
+  Future<String> getText(final String textFile) async {
+    final String text = await rootBundle.loadString("./assets/texts/$textFile");
     return text;
   }
 
@@ -28,7 +28,7 @@ class TextPage extends StatelessWidget {
                 child: Markdown(
                   data: snapshot.data.toString(), // Text aus der Datei dem Markdown Widget zuweisen
                   selectable: true, // Text auswählbar machen
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   // TextStyles anpassen:
                   styleSheet: MarkdownStyleSheet(
                     p: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16),
@@ -40,7 +40,7 @@ class TextPage extends StatelessWidget {
                   imageBuilder: (Uri uri, _, __) {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.asset("assets/images/" + uri.toString() + ".jpg"),
+                      child: Image.asset("assets/images/$uri.jpg"),
                     );
                   },
                   // Funktion, die aufgerufen wird, wenn ein Link im Text gedrückt wird:
@@ -48,13 +48,13 @@ class TextPage extends StatelessWidget {
                     if (url != null && await canLaunch(url)) {
                       await launch(url.toString());
                     } else {
-                      print(url.toString() + " kann nicht geöffnet werden");
+                      print("$url kann nicht geöffnet werden");
                     }
                   },
                 ),
               )
             // Wenn Text aus Datei eingelesen, dann Markdown Widget zeigen, sonst Ladekreis:
-            : Center(child: CircularProgressIndicator()),
+            : const Center(child: CircularProgressIndicator()),
       ),
     );
   }

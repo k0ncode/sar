@@ -4,6 +4,6 @@ import 'package:sar/widgets/text_page.dart';
 class News extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return TextPage(textFile: "news.txt", appBarTitle: "News");
+    return const TextPage(textFile: "news.txt", appBarTitle: "News");
   }
 }

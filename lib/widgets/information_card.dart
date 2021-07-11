@@ -17,7 +17,7 @@ class InformationCard extends StatelessWidget {
       child: OpenContainer(
         closedElevation: 2,
         closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        openBuilder: (context, openPage()) => TextPage(textFile: "informationen/" + textFile, appBarTitle: title),
+        openBuilder: (context, openPage()) => TextPage(textFile: "informationen/$textFile", appBarTitle: title),
         closedBuilder: (context, openPage()) => SizedBox(
           width: double.infinity,
           child: InkWell(
@@ -30,7 +30,7 @@ class InformationCard extends StatelessWidget {
                     height: 112,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/images/image" + imageIndex + ".jpg"),
+                        image: AssetImage("assets/images/image$imageIndex.jpg"),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -48,8 +48,8 @@ class InformationCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Icon(Icons.keyboard_arrow_right, color: sarBlue),
-                SizedBox(width: 8),
+                const Icon(Icons.keyboard_arrow_right, color: sarBlue),
+                const SizedBox(width: 8),
               ],
             ),
           ),
