@@ -19,7 +19,6 @@ dependencies:
   url_launcher: ^6.0.2
 
 dev_dependencies:
-  lint: ^1.5.3
 
 flutter_icons:
   android: "launcher_icon"
@@ -28,6 +27,7 @@ flutter_icons:
   adaptive_icon_foreground: "assets/icon/icon_foreground.png"
   adaptive_icon_background: "#ff253185"
 # Command um Launcher Icon zu generieren: flutter pub run flutter_launcher_icons:main
+
 flutter:
   uses-material-design: true
 
