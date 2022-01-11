@@ -25,7 +25,7 @@ class Informationen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: const [
                     SizedBox(height: 4),
-                    ListTile(title: Text("Die Schule am Ried im Video"), subtitle: Text("Wir stellen uns vor")),
+                    ListTile(title: Text("Die Schule am Ried im Video - Wir stellen uns vor"), subtitle: Text("(zu sehen ist der ehemalige Schulleiter, Christof Gans)")),
                     VideoLauncher(youtubeUrl: "https://youtu.be/ANRX-aR9IM0"),
                   ],
                 ),
@@ -43,18 +43,18 @@ class Informationen extends StatelessWidget {
               textFile: "2_kgs.txt",
             ),
             const InformationCard(
-              title: "Gymnasialzweig (Gynmasium)",
-              text: "Der Gymnasialzweig der Schule am Ried",
+              title: "Gymnasialzweig",
+              text: "(Gynmasium)",
               textFile: "3_gymnasialzweig.txt",
             ),
             const InformationCard(
-              title: "Realschulzweig (Realschule)",
-              text: "Der Realschulzweig der Schule am Ried",
+              title: "Realschulzweig",
+              text: "(Realschule)",
               textFile: "4_realschulzweig.txt",
             ),
             const InformationCard(
-              title: "Hauptschulzweig (Hauptschule)",
-              text: "Der Hauptschulzweig der Schule am Ried",
+              title: "Hauptschulzweig",
+              text: "(Hauptschule)",
               textFile: "5_hauptschulzweig.txt",
             ),
             const InformationCard(
@@ -69,19 +69,19 @@ class Informationen extends StatelessWidget {
             ),
             const InformationCard(
               title: "Musik",
-              text: "Musikalische Angebote an der Schule am Ried",
+              text: "Musikalische Angebote",
               imageIndex: "09",
               textFile: "8_musik.txt",
             ),
             const InformationCard(
               title: "NaWi und MINT-EC",
-              text: "Naturwissenschaftliche Angebote und MINT-EC an der Schule am Ried",
+              text: "Naturwissenschaftliche Angebote und MINT-EC",
               imageIndex: "13",
               textFile: "9_nawi_und_mint.txt",
             ),
             const InformationCard(
               title: "Sport",
-              text: "Sportliche Angebote an der Schule am Ried",
+              text: "Sportliche Angebote",
               imageIndex: "18",
               textFile: "10_sport.txt",
             ),

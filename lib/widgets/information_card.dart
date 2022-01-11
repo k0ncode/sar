@@ -8,7 +8,7 @@ class InformationCard extends StatelessWidget {
   final String text; // Text der Card
   final String imageIndex; // Bild der Card (optinal)
   final String textFile; // Text Datei, aus der der Text stammen soll
-  const InformationCard({ Key? key, this.title = "Titel", this.text = "Text...", this.imageIndex = "", required this.textFile}) : super (key: key);
+  const InformationCard({Key? key, this.title = "Titel", this.text = "Text...", this.imageIndex = "", required this.textFile}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,8 @@ class InformationCard extends StatelessWidget {
               children: [
                 if (imageIndex.isNotEmpty)
                   Ink(
-                    width: 112,
-                    height: 112,
+                    width: 100,
+                    height: 100,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/images/image$imageIndex.jpg"),
