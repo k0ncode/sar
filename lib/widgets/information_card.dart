@@ -8,7 +8,7 @@ class InformationCard extends StatelessWidget {
   final String text; // Text der Card
   final String imageIndex; // Bild der Card (optinal)
   final String textFile; // Text Datei, aus der der Text stammen soll
-  const InformationCard({this.title = "Titel", this.text = "Text...", this.imageIndex = "", required this.textFile});
+  const InformationCard({ Key? key, this.title = "Titel", this.text = "Text...", this.imageIndex = "", required this.textFile}) : super (key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,8 @@ class InformationCard extends StatelessWidget {
       child: OpenContainer(
         closedElevation: 2,
         closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        openBuilder: (context, openPage()) => TextPage(textFile: "informationen/$textFile", appBarTitle: title),
-        closedBuilder: (context, openPage()) => SizedBox(
+        openBuilder: (context, openPage) => TextPage(textFile: "informationen/$textFile", appBarTitle: title),
+        closedBuilder: (context, openPage) => SizedBox(
           width: double.infinity,
           child: InkWell(
             onTap: openPage,

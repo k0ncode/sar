@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class PageScrollbar extends StatelessWidget {
   final Widget child;
-  const PageScrollbar({required this.child});
+  const PageScrollbar({Key? key, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

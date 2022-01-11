@@ -8,7 +8,7 @@ import 'package:sar/widgets/page_scrollbar.dart';
 class TextPage extends StatelessWidget {
   final String textFile;
   final String appBarTitle;
-  const TextPage({required this.textFile, this.appBarTitle = ""});
+  const TextPage({Key? key, required this.textFile, this.appBarTitle = ""}) : super(key: key);
 
   // Funktion, die den Text aus der Datei einliest:
   Future<String> getText(final String textFile) async {

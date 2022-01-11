@@ -28,7 +28,7 @@ void main() async {
   runApp(
     MaterialApp(
       theme: theme,
-      home: Startseite(),
+      home: const Startseite(),
     ),
   );
 }

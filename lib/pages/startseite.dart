@@ -7,6 +7,8 @@ import 'package:sar/pages/news.dart';
 import 'package:sar/pages/appinfo.dart';
 
 class Startseite extends StatelessWidget {
+  const Startseite({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +17,7 @@ class Startseite extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outlined),
-            onPressed: () => navigateTo(AppInfo(), context),
+            onPressed: () => navigateTo(const AppInfo(), context),
             tooltip: "App Info",
           ),
         ],
@@ -38,19 +40,19 @@ class Startseite extends StatelessWidget {
               children: [
                 ElevatedButton(
                   style: roundedButtonStyle,
-                  onPressed: () => navigateTo(Willkommen(), context),
+                  onPressed: () => navigateTo(const Willkommen(), context),
                   child: const Text("WILLKOMMEN"),
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   style: roundedButtonStyle,
-                  onPressed: () => navigateTo(Informationen(), context),
+                  onPressed: () => navigateTo(const Informationen(), context),
                   child: const Text("INFORMATIONEN"),
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   style: roundedButtonStyle,
-                  onPressed: () => navigateTo(News(), context),
+                  onPressed: () => navigateTo(const News(), context),
                   child: const Text("NEWS"),
                 ),
               ],

@@ -5,6 +5,8 @@ import 'package:sar/widgets/text_page.dart';
 import 'package:sar/pages/navigate_to.dart';
 
 class AppInfo extends StatelessWidget {
+  const AppInfo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,7 @@ class AppInfo extends StatelessWidget {
             Text("Version $version"),
             const SizedBox(height: 16),
             TextButton(
-              onPressed: () => navigateTo(Impressum(), context),
+              onPressed: () => navigateTo(const Impressum(), context),
               style: TextButton.styleFrom(primary: sarBlue),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -45,6 +47,8 @@ class AppInfo extends StatelessWidget {
 }
 
 class Impressum extends StatelessWidget {
+  const Impressum({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return const TextPage(textFile: "impressum.txt", appBarTitle: "Impressum");

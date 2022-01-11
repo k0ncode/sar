@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 class VideoLauncher extends StatelessWidget {
   final String youtubeUrl;
-  const VideoLauncher(this.youtubeUrl);
+  const VideoLauncher({Key? key, required this.youtubeUrl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

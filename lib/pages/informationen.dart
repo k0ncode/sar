@@ -4,6 +4,8 @@ import 'package:sar/widgets/page_scrollbar.dart';
 import 'package:sar/widgets/video_launcher.dart';
 
 class Informationen extends StatelessWidget {
+  const Informationen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class Informationen extends StatelessWidget {
                   children: const [
                     SizedBox(height: 4),
                     ListTile(title: Text("Die Schule am Ried im Video"), subtitle: Text("Wir stellen uns vor")),
-                    VideoLauncher("https://youtu.be/ANRX-aR9IM0"),
+                    VideoLauncher(youtubeUrl: "https://youtu.be/ANRX-aR9IM0"),
                   ],
                 ),
               ),
