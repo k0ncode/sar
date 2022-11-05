@@ -4,7 +4,8 @@ import 'package:sar/pages/navigate_to.dart';
 import 'package:sar/pages/willkommen.dart';
 import 'package:sar/pages/informationen.dart';
 import 'package:sar/pages/news.dart';
-import 'package:sar/pages/appinfo.dart';
+import 'package:sar/main.dart';
+import 'package:sar/widgets/text_page.dart';
 
 class Startseite extends StatelessWidget {
   const Startseite({Key? key}) : super(key: key);
@@ -17,8 +18,34 @@ class Startseite extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outlined),
-            onPressed: () => navigateTo(const AppInfo(), context),
-            tooltip: "App Info",
+            onPressed: () => showAboutDialog(
+              context: context,
+              applicationIcon: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset("assets/icon/icon.png", width: 72),
+              ),
+              applicationName: "SaR Schulbroschüren App",
+              applicationVersion: "Version: $version",
+              children: [
+                const Text("made by Konrad Strenge"),
+                TextButton(
+                  onPressed: () => navigateTo(
+                      const TextPage(
+                          textFile: "impressum.txt", appBarTitle: "Impressum"),
+                      context),
+                  style: TextButton.styleFrom(primary: sarBlue),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: const [
+                      Text("Impressum"),
+                      SizedBox(width: 4),
+                      Icon(Icons.launch)
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            tooltip: "App-Info",
           ),
         ],
       ),
