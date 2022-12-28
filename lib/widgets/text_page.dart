@@ -8,7 +8,8 @@ import 'package:sar/widgets/page_scrollbar.dart';
 class TextPage extends StatelessWidget {
   final String textFile;
   final String appBarTitle;
-  const TextPage({Key? key, required this.textFile, this.appBarTitle = ""}) : super(key: key);
+  const TextPage({Key? key, required this.textFile, this.appBarTitle = ""})
+      : super(key: key);
 
   // Funktion, die den Text aus der Datei einliest:
   Future<String> getText(final String textFile) async {
@@ -26,15 +27,21 @@ class TextPage extends StatelessWidget {
         body: snapshot.hasData
             ? PageScrollbar(
                 child: Markdown(
-                  data: snapshot.data.toString(), // Text aus der Datei dem Markdown Widget zuweisen
+                  data: snapshot.data
+                      .toString(), // Text aus der Datei dem Markdown Widget zuweisen
                   selectable: true, // Text auswählbar machen
                   physics: const BouncingScrollPhysics(),
                   // TextStyles anpassen:
                   styleSheet: MarkdownStyleSheet(
-                    p: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16),
-                    blockSpacing: 12,
+                    p: Theme.of(context).textTheme.bodyText1,
+                    blockSpacing: 24,
+                    listBullet: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(fontWeight: FontWeight.bold),
                     listBulletPadding: const EdgeInsets.all(0),
-                    a: Theme.of(context).textTheme.bodyText2!.copyWith(fontSize: 16, color: sarBlue, decoration: TextDecoration.underline),
+                    a: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        color: sarBlue, decoration: TextDecoration.underline),
                   ),
                   // Custom Bilder mit rounded Edges:
                   imageBuilder: (Uri uri, _, __) {

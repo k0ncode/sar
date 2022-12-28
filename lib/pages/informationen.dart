@@ -20,13 +20,29 @@ class Informationen extends StatelessWidget {
               child: Card(
                 margin: EdgeInsets.zero,
                 elevation: 2,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    SizedBox(height: 4),
-                    ListTile(title: Text("Die Schule am Ried im Video - Wir stellen uns vor"), subtitle: Text("(zu sehen ist der ehemalige Schulleiter, Christof Gans)")),
-                    VideoLauncher(youtubeUrl: "https://youtu.be/ANRX-aR9IM0"),
+                  children: [
+                    const SizedBox(height: 4),
+                    ListTile(
+                        title: Text(
+                          "Die SaR im Video - Wir stellen uns vor",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText1!
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(
+                          "(zu sehen: der ehemalige Schulleiter, Christof Gans)",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText1!
+                              .copyWith(fontSize: 14),
+                        )),
+                    const VideoLauncher(
+                        youtubeUrl: "https://youtu.be/ANRX-aR9IM0"),
                   ],
                 ),
               ),
@@ -43,23 +59,23 @@ class Informationen extends StatelessWidget {
               textFile: "2_kgs.txt",
             ),
             const InformationCard(
-              title: "Gymnasialzweig",
-              text: "(Gynmasium)",
+              title: "Der Gymnasialzweig",
+              text: "Die Schule am Ried als Gymnasium",
               textFile: "3_gymnasialzweig.txt",
             ),
             const InformationCard(
-              title: "Realschulzweig",
-              text: "(Realschule)",
+              title: "Der Realschulzweig",
+              text: "Die Schule am Ried als Realschule",
               textFile: "4_realschulzweig.txt",
             ),
             const InformationCard(
-              title: "Hauptschulzweig",
-              text: "(Hauptschule)",
+              title: "Der Hauptschulzweig",
+              text: "Die Schule am Ried als Hauptschule",
               textFile: "5_hauptschulzweig.txt",
             ),
             const InformationCard(
-              title: "Gymnasiale Oberstufe",
-              text: "Die gymnasiale Oberstufe der Schule am Ried",
+              title: "Die Gymnasiale Oberstufe",
+              text: "Die Oberstufenzeit an der Schule am Ried",
               textFile: "6_oberstufe.txt",
             ),
             const InformationCard(
@@ -112,8 +128,8 @@ class Informationen extends StatelessWidget {
               textFile: "15_schulleitung.txt",
             ),
             const InformationCard(
-              title: "Elternbeirat",
-              text: "Der Schulelternbeirat",
+              title: "Der Schulelternbeirat",
+              text: "(SEB)",
               textFile: "16_elternbeirat.txt",
             ),
             const InformationCard(
