@@ -10,7 +10,7 @@ class VideoLauncher extends StatelessWidget {
   Widget build(BuildContext context) {
     final String id = youtubeUrl.substring(youtubeUrl.length - 11);
     return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(12),
       child: GestureDetector(
         onTap: () async {
           if (await canLaunch(youtubeUrl)) {
