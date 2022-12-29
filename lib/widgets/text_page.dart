@@ -42,6 +42,10 @@ class TextPage extends StatelessWidget {
                     listBulletPadding: const EdgeInsets.all(0),
                     a: Theme.of(context).textTheme.bodyText1!.copyWith(
                         color: sarBlue, decoration: TextDecoration.underline),
+                    h2: Theme.of(context)
+                        .textTheme
+                        .bodyText1!
+                        .copyWith(fontWeight: FontWeight.bold),
                   ),
                   // Custom Bilder mit rounded Edges:
                   imageBuilder: (Uri uri, _, __) {
