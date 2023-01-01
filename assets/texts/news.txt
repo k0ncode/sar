@@ -1,11 +1,9 @@
-# News und Aktuelles #
-
 Jedes Jahr gibt es neue Konzepte, Pläne und Entwicklungen, über die wir Sie auf dieser Seite exemplarisch informieren wollen.
 
 
 ## Neubau ##
 
-Die Schule am Ried wird sich in den nächsten 2 Jahren baulich verändern. An der Stelle, an der sich bis vor kurzem noch die beiden Oberstufengebäude befinden, wird in Kürze ein Neu- und Erweiterungsbau entstehen, der höchsten architektonischen und künstlerischen Ansprüchen gerecht werden wird. Im ersten Stock werden sich 16 modern eingerichtete Klassenräume befinden, während das Erdgeschoss Platz für eine geräumige Cafeteria und Mensa bieten wird.
+Die Schule am Ried wird sich im nächsten Jahr baulich verändern. An der Stelle, an der sich bis vor kurzem noch die beiden Oberstufengebäude befanden, wird in Kürze ein Neu- und Erweiterungsbau entstehen, der höchsten architektonischen und künstlerischen Ansprüchen gerecht werden wird. Im ersten Stock werden sich 16 modern eingerichtete Klassenräume befinden, während das Erdgeschoss Platz für eine geräumige Cafeteria und Mensa bieten wird.
 
 ![](image33)
 
@@ -21,6 +19,6 @@ Im Jahr 2020 haben wir das Zertifikat „Schule ohne Rassismus – Schule mit Co
 
 ## Digitalisierung & Schul-Cloud ##
 
-Die Schule am Ried ist Pilotschule bei der Nutzung der HPI-Schul-Cloud ("dBildungscloud"). Die Bildungscloud verspricht eine innovative und sichere IT-Infrastruktur in der Schule, trägt zu einem zeitgemäßen Unterricht bei und schont im Rahmen dessen Ressourcen und Budgets. Dies bedeutete, dass wir beim Lockdown kurzfristig auf digitalen Unterricht mit der Schul-Cloud umstellen konnten und unsere Schüler/innen beim Homeschooling bestmöglich versorgt waren. Aber auch die IT-Ausstattung der Schule am Ried verbessert sich zügig. Nach der kompletten Neuausstattung vor drei Jahren mit Computerräumen und PC in allen Klassenräumen sind mittlerweile alle Unterrichtsräume mit Beamern ausgestattet und verfügen über eine Breitband (Gigabit) Internet-Anbindung. Mit Mitteln des Digitalpakts wird die Präsentationstechnik weiter verbessert werden. Ehe die Schule auch mit dem städtischen WLAN ausgestattet werden wird, konnten wir mit Hilfe des Fördervereins bereits jetzt ein schuleigenes WLAN installieren und auch beispielsweise iPads anschaffen. Zudem verfügt die Schule seit kurzem über ein Gigabit-Internetanschluss.
+Die Schule am Ried ist Pilotschule bei der Nutzung der "dBildungscloud". Die Bildungscloud und auch das Schulportal des Landes Hessen, dass wir intensiv nutzen, verspricht eine innovative und sichere IT-Infrastruktur in der Schule, trägt zu einem zeitgemäßen Unterricht bei und schont im Rahmen dessen Ressourcen und Budgets. Aber auch die IT-Ausstattung der Schule am Ried verbessert sich zügig. Nach der kompletten Neuausstattung vor drei Jahren mit Computerräumen und PC in allen Klassenräumen sind mittlerweile alle Unterrichtsräume mit Beamern ausgestattet. Seit Sommer 2022 verfügt die SaR obendrein über ein flächendeckendes WLAN-Netzwerk. Mit Mitteln des Digitalpakts wird die Präsentationstechnik weiter verbessert werden. Ehe die Schule mit dem städtischen WLAN ausgestattet werden wurde, konnten wir mit Hilfe des Fördervereins bereits ein schuleigenes WLAN installieren und nutzen. Zudem verfügt die Schule seit kurzem über ein Gigabit-Internetanschluss. Klassensätze mit Laptops aber auch iPads runden die IT-Ausstattung ab.
 
 ![](image29)

@@ -2,14 +2,27 @@ import 'package:flutter/material.dart';
 
 const Color sarBlue = Color(0xff253185); // Farbe vom SaR Logo
 
-// Theme:
+// Allgemeines App Theme:
 ThemeData theme = ThemeData(
-  appBarTheme: const AppBarTheme(color: sarBlue, brightness: Brightness.dark), // Alle AppBars haben die Farbe sarBlue
+  appBarTheme: const AppBarTheme(color: sarBlue),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      foregroundColor: sarBlue,
+    ),
+  ),
+  textTheme: const TextTheme(
+    bodyText1: TextStyle(
+      fontWeight: FontWeight.normal,
+      fontSize: 18,
+      height: 1.5,
+    ),
+  ),
 );
 
-// Style für runde, große ElevatedButtons:
+// ButtonStyle für große blaue ElevatedButtons
 ButtonStyle roundedButtonStyle = ButtonStyle(
   minimumSize: MaterialStateProperty.all(const Size(double.infinity, 48)),
   backgroundColor: MaterialStateProperty.all(sarBlue),
-  shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
+  shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
 );

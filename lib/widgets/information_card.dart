@@ -8,7 +8,13 @@ class InformationCard extends StatelessWidget {
   final String text; // Text der Card
   final String imageIndex; // Bild der Card (optinal)
   final String textFile; // Text Datei, aus der der Text stammen soll
-  const InformationCard({Key? key, this.title = "Titel", this.text = "Text...", this.imageIndex = "", required this.textFile}) : super(key: key);
+  const InformationCard(
+      {Key? key,
+      this.title = "Titel",
+      this.text = "Text...",
+      this.imageIndex = "",
+      required this.textFile})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +22,8 @@ class InformationCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12),
       child: OpenContainer(
         closedElevation: 2,
-        closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        openBuilder: (context, openPage) => TextPage(textFile: "informationen/$textFile", appBarTitle: title),
+        closedShape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         closedBuilder: (context, openPage) => SizedBox(
           width: double.infinity,
           child: InkWell(
@@ -39,9 +45,17 @@ class InformationCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4),
                     child: ListTile(
-                      title: Text(title),
+                      title: Text(title,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText1!
+                              .copyWith(fontWeight: FontWeight.bold)),
                       subtitle: Text(
                         text,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(fontSize: 14),
                         overflow: TextOverflow.ellipsis,
                         maxLines: (imageIndex.isNotEmpty) ? 3 : 1,
                       ),
@@ -54,6 +68,8 @@ class InformationCard extends StatelessWidget {
             ),
           ),
         ),
+        openBuilder: (context, openPage) =>
+            TextPage(textFile: "informationen/$textFile", appBarTitle: title),
       ),
     );
   }

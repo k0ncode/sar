@@ -1,6 +1,4 @@
-# Gymnasialzweig #
-
-Der Gymnasialzweig mit seinem Fächerangebot und seinen Bildungsinhalten entspricht den Richtlinien des Kultusministeriums für Gymnasien und vermittelt die Qualifikationen für die gymnasiale Oberstufe.
+mit seinem Fächerangebot und seinen Bildungsinhalten entspricht den Richtlinien des Kultusministeriums für Gymnasien und vermittelt die Qualifikationen für die gymnasiale Oberstufe.
 
 Seit 2014 sind wir wieder **G9-Gymnasium**, was u.a. ein sehr großer Wunsch der ansässigen Elternschaft war.
 

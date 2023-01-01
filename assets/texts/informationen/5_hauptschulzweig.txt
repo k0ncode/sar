@@ -1,6 +1,4 @@
-# Hauptschulzweig #
-
-Der **Hauptschulzweig** umfasst die Klassen 5-9 und führt im Klassenverband zum Hauptschulabschluss bzw. zum **qualifizierenden Hauptschulabschluss**. Der Hauptschulabschluss eröffnet den Übergang in die Berufsausbildung und in ein differenziertes berufliches Schulwesen, das auch mittlere und höhere Bildungsabschlüsse ermöglicht.
+umfasst die Klassen 5-9 und führt im Klassenverband zum Hauptschulabschluss bzw. zum **qualifizierenden Hauptschulabschluss**. Der Hauptschulabschluss eröffnet den Übergang in die Berufsausbildung und in ein differenziertes berufliches Schulwesen, das auch mittlere und höhere Bildungsabschlüsse ermöglicht.
 
 Zum allgemeinbildenden Unterricht gehört auch ein breites Spektrum im Fach **Arbeitslehre**. Hier wird den Lerngruppen ein Einblick in Holz- und Metallverarbeitung, Hauswirtschaft, Keramik, Wohn- und Umweltbereiche und Informatik vermittelt. Ab der 8. Klasse wird das Hauptaugenmerk auf die Vorbereitung auf die Berufsvorbereitung gelegt. Dazu gehören die beiden Berufspraktika, die spätere Berufswelt und weiterführende berufliche Schulen.
 
