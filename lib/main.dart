@@ -7,20 +7,9 @@ import 'package:sar/pages/home.dart';
 String version = "";
 
 void main() async {
-  // Optische Anpassungen:
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(
-    SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent, // Statusbar transparent machen
-      systemNavigationBarColor: Colors.grey[50], // NavigationBar weiß machen
-      systemNavigationBarIconBrightness:
-          Brightness.dark, // NavigationBar Icons schwarz machen
-    ),
-  );
-
   // Nur im Hochformat erlauben:
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
   // Version erhalten:
   final PackageInfo packageInfo = await PackageInfo.fromPlatform();
