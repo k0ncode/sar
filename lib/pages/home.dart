@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sar/pages/app_info.dart';
+import 'package:sar/pages/qr_code_scanner.dart';
 import 'package:sar/theme.dart';
 import 'package:sar/pages/navigate_to.dart';
 import 'package:sar/pages/willkommen.dart';
@@ -44,7 +45,7 @@ class Startseite extends StatelessWidget {
             //     ),
             //   ],
             // ),
-            tooltip: "App-Info",
+            tooltip: "App Info",
           ),
         ],
       ),
@@ -81,6 +82,12 @@ class Startseite extends StatelessWidget {
                     style: roundedButtonStyle,
                     onPressed: () => navigateTo(const News(), context),
                     child: const Text("NEWS"),
+                  ),
+                  const SizedBox(height: 16),
+                  ElevatedButton(
+                    style: roundedButtonStyle,
+                    onPressed: () => navigateTo(const QRCodeScanner(), context),
+                    child: const Text("QR-CODE SCANNER"),
                   ),
                 ],
               ),
