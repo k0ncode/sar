@@ -1,6 +1,5 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 
 class QRCodeScanner extends StatefulWidget {
   const QRCodeScanner({Key? key}) : super(key: key);
@@ -10,41 +9,24 @@ class QRCodeScanner extends StatefulWidget {
 }
 
 class _QRCodeScannerState extends State<QRCodeScanner> {
-  final GlobalKey qrKey = GlobalKey();
-  QRViewController? controller;
-  Barcode? result;
+  MobileScannerController cameraController = MobileScannerController();
 
   @override
-  void reassemble() {
-    super.reassemble();
-    if (Platform.isAndroid) {
-      controller!.pauseCamera();
-    } else if (Platform.isIOS) {
-      controller!.resumeCamera();
-    }
-  }
-
-  void _onQRViewCreated(QRViewController controller) {
-    this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {
-      setState(() {
-        result = scanData;
-      });
-    });
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
-      body: QRView(
-        key: qrKey,
-        onQRViewCreated: _onQRViewCreated,
+      appBar: AppBar(title: const Text("QR-Code Scanner")),
+      body: MobileScanner(
+        allowDuplicates: false,
+        controller: cameraController,
+        onDetect: (barcode, args) {
+          if (barcode.rawValue == null) {
+            debugPrint("Failed to scan QR-Code");
+          } else {
+            final String code = barcode.rawValue!;
+            debugPrint("QR-Code found");
+          }
+        },
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
   }
 }
