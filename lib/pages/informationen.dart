@@ -13,7 +13,7 @@ class Informationen extends StatelessWidget {
       body: PageScrollbar(
         child: ListView(
           padding: const EdgeInsets.all(16),
-          physics: const BouncingScrollPhysics(),
+          // physics: const BouncingScrollPhysics(),
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 12),

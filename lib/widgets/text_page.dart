@@ -30,7 +30,7 @@ class TextPage extends StatelessWidget {
                 child: Markdown(
                   data: snapshot.data.toString(), // Text aus der Datei dem Markdown Widget zuweisen
                   selectable: true, // Text auswählbar machen
-                  physics: const BouncingScrollPhysics(),
+                  // physics: const BouncingScrollPhysics(),
                   // TextStyles anpassen:
                   styleSheet: MarkdownStyleSheet(
                     p: Theme.of(context).textTheme.bodyText1,
