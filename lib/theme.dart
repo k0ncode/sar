@@ -4,6 +4,19 @@ const Color sarBlue = Color(0xff253185); // Farbe vom SaR Logo
 
 // Allgemeines App Theme:
 ThemeData theme = ThemeData(
+  colorScheme: const ColorScheme(
+    brightness: Brightness.light,
+    primary: sarBlue,
+    onPrimary: Colors.white,
+    secondary: sarBlue,
+    onSecondary: Colors.white,
+    error: Colors.red,
+    onError: Colors.white,
+    background: Colors.white,
+    onBackground: Colors.black,
+    surface: Colors.white,
+    onSurface: Colors.black,
+  ),
   appBarTheme: const AppBarTheme(color: sarBlue),
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
@@ -23,6 +36,5 @@ ThemeData theme = ThemeData(
 ButtonStyle roundedButtonStyle = ButtonStyle(
   minimumSize: MaterialStateProperty.all(const Size(double.infinity, 48)),
   backgroundColor: MaterialStateProperty.all(sarBlue),
-  shape: MaterialStateProperty.all(
-      RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+  shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
 );
