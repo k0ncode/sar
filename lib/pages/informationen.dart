@@ -20,8 +20,7 @@ class Informationen extends StatelessWidget {
               child: Card(
                 margin: EdgeInsets.zero,
                 elevation: 2,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -29,20 +28,13 @@ class Informationen extends StatelessWidget {
                     ListTile(
                         title: Text(
                           "Die SaR im Video - Wir stellen uns vor",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(fontWeight: FontWeight.bold),
+                          style: Theme.of(context).textTheme.bodyText1!.copyWith(fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(
                           "(zu sehen: der ehemalige Schulleiter, Christof Gans)",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText1!
-                              .copyWith(fontSize: 14),
+                          style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 14),
                         )),
-                    const VideoLauncher(
-                        youtubeUrl: "https://youtu.be/ANRX-aR9IM0"),
+                    const VideoLauncher(youtubeUrlString: "https://youtu.be/ANRX-aR9IM0"),
                   ],
                 ),
               ),

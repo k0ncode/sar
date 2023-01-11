@@ -3,20 +3,21 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class VideoLauncher extends StatelessWidget {
-  final String youtubeUrl;
-  const VideoLauncher({Key? key, required this.youtubeUrl}) : super(key: key);
+  final String youtubeUrlString;
+  const VideoLauncher({Key? key, required this.youtubeUrlString}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final String id = youtubeUrl.substring(youtubeUrl.length - 11);
+    final String id = youtubeUrlString.substring(youtubeUrlString.length - 11);
+    final Uri youtubeUrl = Uri.parse(youtubeUrlString);
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: GestureDetector(
         onTap: () async {
-          if (await canLaunch(youtubeUrl)) {
-            await launch(youtubeUrl);
+          if (await canLaunchUrl(youtubeUrl)) {
+            await launchUrl(youtubeUrl, mode: LaunchMode.externalNonBrowserApplication);
           } else {
-            print("${youtubeUrl}Kann nicht geöffnet werden");
+            print("${youtubeUrlString}Kann nicht geöffnet werden");
           }
         },
         child: Stack(
