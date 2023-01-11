@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sar/main.dart';
 import 'package:sar/pages/impressum.dart';
 import 'package:sar/pages/navigate_to.dart';
-import 'package:sar/pages/impressum.dart';
 
 class AppInfo extends StatelessWidget {
   const AppInfo({Key? key}) : super(key: key);
