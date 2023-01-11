@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 // import 'package:full_screen_image_null_safe/full_screen_image_null_safe.dart'; // !!!!
 // import 'package:easy_image_viewer/easy_image_viewer.dart';
@@ -43,15 +42,17 @@ class TextPage extends StatelessWidget {
                   ),
                   // Custom Bilder mit rounded Edges:
                   imageBuilder: (Uri uri, _, __) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: InkWell(
-                          child: Hero(
-                            tag: "image",
-                            child: Image.asset("assets/images/$uri.jpg"),
-                          ),
-                          onTap: () => debugPrint("image clicked") // showImageViewer(context, AssetImage("assets/images/$uri.jpg"), swipeDismissible: true, doubleTapZoomable: true),
-                          ),
+                    return Center(
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: InkWell(
+                            child: Hero(
+                              tag: "image",
+                              child: Image.asset("assets/images/$uri.jpg"),
+                            ),
+                            onTap: () => debugPrint("image clicked") // showImageViewer(context, AssetImage("assets/images/$uri.jpg"), swipeDismissible: true, doubleTapZoomable: true),
+                            ),
+                      ),
                     );
                   },
                   // Funktion, die aufgerufen wird, wenn ein Link im Text gedrückt wird:
