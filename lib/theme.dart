@@ -40,7 +40,7 @@ ThemeData darkTheme = ThemeData(
     onSurface: Colors.white,
   ),
   textTheme: const TextTheme(
-    bodyMedium: TextStyle(
+    bodyLarge: TextStyle(
       fontWeight: FontWeight.normal,
       fontSize: 18,
       height: 1.5,
@@ -51,16 +51,16 @@ ThemeData darkTheme = ThemeData(
 // Style Sheet für Markdown Textseiten:
 MarkdownStyleSheet styleSheet(context) {
   return MarkdownStyleSheet(
-    p: Theme.of(context).textTheme.bodyMedium,
+    p: Theme.of(context).textTheme.bodyLarge,
     blockSpacing: 24,
-    listBullet: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+    listBullet: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
     listBulletPadding: const EdgeInsets.all(0),
-    a: Theme.of(context).textTheme.bodyMedium!.copyWith(
+    a: Theme.of(context).textTheme.bodyLarge!.copyWith(
           color: Theme.of(context).colorScheme.secondary,
           decoration: TextDecoration.underline,
           decorationColor: Theme.of(context).colorScheme.secondary,
         ),
-    h2: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+    h2: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
   );
 }
 
