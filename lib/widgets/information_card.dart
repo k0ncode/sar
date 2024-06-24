@@ -39,10 +39,10 @@ class InformationCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4),
                     child: ListTile(
-                      title: Text(title, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold)),
+                      title: Text(title, style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold)),
                       subtitle: Text(
                         text,
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 14),
                         overflow: TextOverflow.ellipsis,
                         maxLines: imageIndex != null ? 3 : 1,
                       ),

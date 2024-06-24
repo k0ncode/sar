@@ -33,11 +33,11 @@ class Informationen extends StatelessWidget {
                     ListTile(
                       title: Text(
                         "Die SaR im Video - Wir stellen uns vor",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Text(
                         "Zu sehen: der ehemalige Schulleiter, Christof Gans",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 14),
                       ),
                     ),
                     const Padding(

@@ -17,7 +17,7 @@ ThemeData theme = ThemeData(
     onSurface: Colors.black,
   ),
   textTheme: const TextTheme(
-    bodyMedium: TextStyle(
+    bodyLarge: TextStyle(
       fontWeight: FontWeight.normal,
       fontSize: 18,
       height: 1.5,

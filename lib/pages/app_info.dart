@@ -29,7 +29,7 @@ class AppInfo extends StatelessWidget {
                   const SizedBox(height: 16),
                   Text(
                     "Digitale Schulbroschüre \n der Schule am Ried",
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
