@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:sar/theme.dart';
-import 'package:sar/pages/home.dart';
+
+import 'theme.dart';
+import 'pages/home.dart';
 
 String version = "";
 
@@ -11,7 +12,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-  // Version erhalten:
+  // Navigationsleiste transparent machen:
+  makeSystemNavigationTransparent();
+
+  // App Version erhalten für App Info Seite:
   PackageInfo packageInfo = await PackageInfo.fromPlatform();
   version = packageInfo.version.substring(0, 3);
 
@@ -19,7 +23,9 @@ void main() async {
   runApp(
     MaterialApp(
       theme: theme,
+      darkTheme: darkTheme,
       home: const Startseite(),
+      debugShowCheckedModeBanner: false,
     ),
   );
 }

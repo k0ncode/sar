@@ -26,15 +26,19 @@ class Informationen extends StatelessWidget {
                   children: [
                     const SizedBox(height: 4),
                     ListTile(
-                        title: Text(
-                          "Die SaR im Video - Wir stellen uns vor",
-                          style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                        ),
-                        subtitle: Text(
-                          "(zu sehen: der ehemalige Schulleiter, Christof Gans)",
-                          style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),
-                        )),
-                    const VideoLauncher(youtubeUrlString: "https://youtu.be/ANRX-aR9IM0"),
+                      title: Text(
+                        "Die SaR im Video - Wir stellen uns vor",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: Text(
+                        "(zu sehen: der ehemalige Schulleiter, Christof Gans)",
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(16, 0, 16, 16),
+                      child: VideoLauncher(youtubeUrlString: "https://youtu.be/ANRX-aR9IM0"),
+                    ),
                   ],
                 ),
               ),

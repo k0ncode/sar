@@ -19,32 +19,6 @@ class Startseite extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.info_outlined),
             onPressed: () => navigateTo(const AppInfo(), context),
-            // onPressed: () => showAboutDialog(
-            //   context: context,
-            //   applicationIcon: ClipRRect(
-            //     borderRadius: BorderRadius.circular(12),
-            //     child: Image.asset("assets/icon/icon.png", width: 80),
-            //   ),
-            //   applicationName: "Digitale Schulbroschüre der Schule am Ried",
-            //   applicationVersion: "Version $version",
-            //   children: [
-            //     const Center(child: Text("made by Konrad Strenge")),
-            //     TextButton(
-            //       onPressed: () => navigateTo(
-            //           const TextPage(
-            //               textFile: "impressum.txt", appBarTitle: "Impressum"),
-            //           context),
-            //       child: Row(
-            //         mainAxisSize: MainAxisSize.min,
-            //         children: const [
-            //           Text("Impressum"),
-            //           SizedBox(width: 4),
-            //           Icon(Icons.launch)
-            //         ],
-            //       ),
-            //     ),
-            //   ],
-            // ),
             tooltip: "App Info",
           ),
         ],
@@ -66,25 +40,25 @@ class Startseite extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  ElevatedButton(
+                  FilledButton(
                     style: roundedButtonStyle,
                     onPressed: () => navigateTo(const Willkommen(), context),
                     child: const Text("WILLKOMMEN"),
                   ),
                   const SizedBox(height: 16),
-                  ElevatedButton(
+                  FilledButton(
                     style: roundedButtonStyle,
                     onPressed: () => navigateTo(const Informationen(), context),
                     child: const Text("INFORMATIONEN"),
                   ),
                   const SizedBox(height: 16),
-                  ElevatedButton(
+                  FilledButton(
                     style: roundedButtonStyle,
                     onPressed: () => navigateTo(const News(), context),
                     child: const Text("NEWS"),
                   ),
                   const SizedBox(height: 16),
-                  ElevatedButton(
+                  FilledButton(
                     style: roundedButtonStyle,
                     onPressed: () => navigateTo(const QRCodeScanner(), context),
                     child: const Text("QR-CODE SCANNER"),

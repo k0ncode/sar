@@ -6,14 +6,9 @@ import 'package:sar/widgets/text_page.dart';
 class InformationCard extends StatelessWidget {
   final String title; // Überschrift der Card
   final String text; // Text der Card
-  final String imageIndex; // Bild der Card (optinal)
   final String textFile; // Text Datei, aus der der Text stammen soll
-  const InformationCard(
-      {super.key,
-      this.title = "Titel",
-      this.text = "Text...",
-      this.imageIndex = "",
-      required this.textFile});
+  final String? imageIndex; // Bild der Card (optional)
+  const InformationCard({super.key, this.title = "Titel", this.text = "Text...", required this.textFile, this.imageIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +16,15 @@ class InformationCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12),
       child: OpenContainer(
         closedElevation: 2,
-        closedShape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         closedBuilder: (context, openPage) => SizedBox(
           width: double.infinity,
           child: InkWell(
+            splashFactory: InkSparkle.splashFactory,
             onTap: openPage,
             child: Row(
               children: [
-                if (imageIndex.isNotEmpty)
+                if (imageIndex != null)
                   Ink(
                     width: 100,
                     height: 100,
@@ -44,19 +39,12 @@ class InformationCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4),
                     child: ListTile(
-                      title: Text(title,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(fontWeight: FontWeight.bold)),
+                      title: Text(title, style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold)),
                       subtitle: Text(
                         text,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(fontSize: 14),
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),
                         overflow: TextOverflow.ellipsis,
-                        maxLines: (imageIndex.isNotEmpty) ? 3 : 1,
+                        maxLines: imageIndex != null ? 3 : 1,
                       ),
                     ),
                   ),
@@ -67,8 +55,7 @@ class InformationCard extends StatelessWidget {
             ),
           ),
         ),
-        openBuilder: (context, openPage) =>
-            TextPage(textFile: "informationen/$textFile", appBarTitle: title),
+        openBuilder: (context, openPage) => TextPage(textFile: "informationen/$textFile", appBarTitle: title),
       ),
     );
   }
