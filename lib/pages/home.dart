@@ -15,6 +15,8 @@ class Startseite extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("SaR Schulbroschüre"),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
         actions: [
           IconButton(
             icon: const Icon(Icons.info_outlined),
@@ -31,7 +33,7 @@ class Startseite extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Image.asset(
-                  "assets/images/image00.png",
+                  MediaQuery.of(context).platformBrightness == Brightness.light ? "assets/images/graphic.png" : "assets/images/graphic-dark.png",
                   fit: BoxFit.fitWidth,
                 ),
               ),

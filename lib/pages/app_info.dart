@@ -11,6 +11,8 @@ class AppInfo extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("App Info"),
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          foregroundColor: Theme.of(context).colorScheme.onPrimary,
         ),
         body: SafeArea(
           child: Padding(
@@ -34,6 +36,7 @@ class AppInfo extends StatelessWidget {
                   Text("Version $version"),
                   const SizedBox(height: 8),
                   TextButton(
+                    style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.secondary),
                     onPressed: () => navigateTo(const Impressum(), context),
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,
@@ -41,6 +44,7 @@ class AppInfo extends StatelessWidget {
                     ),
                   ),
                   TextButton(
+                    style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.secondary),
                     onPressed: () => showLicensePage(context: context),
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,

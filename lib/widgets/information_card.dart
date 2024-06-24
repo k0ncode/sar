@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:animations/animations.dart';
-import 'package:sar/theme.dart';
 import 'package:sar/widgets/text_page.dart';
 
 class InformationCard extends StatelessWidget {
@@ -16,6 +15,7 @@ class InformationCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12),
       child: OpenContainer(
         closedElevation: 2,
+        closedColor: Theme.of(context).colorScheme.surfaceContainer,
         closedShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         closedBuilder: (context, openPage) => SizedBox(
           width: double.infinity,
@@ -49,7 +49,12 @@ class InformationCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Icon(Icons.keyboard_arrow_right, color: sarBlue),
+                Icon(
+                  Icons.keyboard_arrow_right,
+                  color: MediaQuery.of(context).platformBrightness == Brightness.light
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.onSurface,
+                ),
                 const SizedBox(width: 8),
               ],
             ),

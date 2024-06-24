@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 
 const Color sarBlue = Color(0xff253185); // Farbe vom SaR Logo
 
@@ -15,7 +16,6 @@ ThemeData theme = ThemeData(
     surface: Colors.white,
     onSurface: Colors.black,
   ),
-  appBarTheme: const AppBarTheme(color: sarBlue, foregroundColor: Colors.white),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(
       fontWeight: FontWeight.normal,
@@ -27,10 +27,17 @@ ThemeData theme = ThemeData(
 
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
-  colorScheme: ColorScheme.fromSeed(seedColor: sarBlue, brightness: Brightness.dark),
-  appBarTheme: const AppBarTheme(backgroundColor: sarBlue, foregroundColor: Colors.white),
-  textButtonTheme: TextButtonThemeData(
-    style: TextButton.styleFrom(foregroundColor: sarBlue),
+  colorScheme: const ColorScheme(
+    brightness: Brightness.dark,
+    primary: Color.fromARGB(255, 40, 40, 40),
+    onPrimary: Colors.white,
+    secondary: Color.fromARGB(255, 154, 166, 255),
+    onSecondary: Colors.black,
+    error: Colors.red,
+    onError: Colors.white,
+    surface: Colors.black,
+    surfaceContainer: Color.fromARGB(255, 40, 40, 40),
+    onSurface: Colors.white,
   ),
   textTheme: const TextTheme(
     bodyMedium: TextStyle(
@@ -41,10 +48,25 @@ ThemeData darkTheme = ThemeData(
   ),
 );
 
-// ButtonStyle für große blaue ElevatedButtons
+// Style Sheet für Markdown Textseiten:
+MarkdownStyleSheet styleSheet(context) {
+  return MarkdownStyleSheet(
+    p: Theme.of(context).textTheme.bodyMedium,
+    blockSpacing: 24,
+    listBullet: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+    listBulletPadding: const EdgeInsets.all(0),
+    a: Theme.of(context).textTheme.bodyMedium!.copyWith(
+          color: Theme.of(context).colorScheme.secondary,
+          decoration: TextDecoration.underline,
+          decorationColor: Theme.of(context).colorScheme.secondary,
+        ),
+    h2: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+  );
+}
+
+// ButtonStyle für große abgerundete FilledButtons
 ButtonStyle roundedButtonStyle = ButtonStyle(
   minimumSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
-  // backgroundColor: WidgetStateProperty.all(sarBlue),
   shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
 );
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sar/widgets/information_card.dart';
-import 'package:sar/widgets/page_scrollbar.dart';
-import 'package:sar/widgets/video_launcher.dart';
+
+import '../widgets/information_card.dart';
+import '../widgets/video_launcher.dart';
 
 class Informationen extends StatelessWidget {
   const Informationen({super.key});
@@ -9,15 +9,20 @@ class Informationen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Informationen")),
-      body: PageScrollbar(
+      appBar: AppBar(
+        title: const Text("Informationen"),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+      ),
+      body: Scrollbar(
+        thickness: 6,
         child: ListView(
           padding: const EdgeInsets.all(16),
-          // physics: const BouncingScrollPhysics(),
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 12),
               child: Card(
+                color: Theme.of(context).colorScheme.surfaceContainer,
                 margin: EdgeInsets.zero,
                 elevation: 2,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -31,7 +36,7 @@ class Informationen extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Text(
-                        "(zu sehen: der ehemalige Schulleiter, Christof Gans)",
+                        "Zu sehen: der ehemalige Schulleiter, Christof Gans",
                         style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize: 14),
                       ),
                     ),

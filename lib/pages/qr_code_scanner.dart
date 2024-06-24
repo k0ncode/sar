@@ -78,6 +78,8 @@ class _QRCodeScannerState extends State<QRCodeScanner> with WidgetsBindingObserv
     return Scaffold(
       appBar: AppBar(
         title: const Text("QR-Code Scanner"),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
         actions: [
           IconButton(
             color: Colors.white,
