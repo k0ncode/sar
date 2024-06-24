@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:package_info/package_info.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:sar/theme.dart';
 import 'package:sar/pages/home.dart';
 
@@ -12,7 +12,7 @@ void main() async {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
   // Version erhalten:
-  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  PackageInfo packageInfo = await PackageInfo.fromPlatform();
   version = packageInfo.version.substring(0, 3);
 
   // App starten:

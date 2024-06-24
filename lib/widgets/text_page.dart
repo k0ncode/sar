@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 class TextPage extends StatelessWidget {
   final String textFile;
   final String appBarTitle;
-  const TextPage({Key? key, required this.textFile, this.appBarTitle = ""}) : super(key: key);
+  const TextPage({super.key, required this.textFile, this.appBarTitle = ""});
 
   // Funktion, die den Text aus der Datei einliest:
   Future<String> getText(final String textFile) async {
@@ -33,12 +33,12 @@ class TextPage extends StatelessWidget {
                   // physics: const BouncingScrollPhysics(),
                   // TextStyles anpassen:
                   styleSheet: MarkdownStyleSheet(
-                    p: Theme.of(context).textTheme.bodyText1,
+                    p: Theme.of(context).textTheme.bodyMedium,
                     blockSpacing: 24,
-                    listBullet: Theme.of(context).textTheme.bodyText1!.copyWith(fontWeight: FontWeight.bold),
+                    listBullet: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
                     listBulletPadding: const EdgeInsets.all(0),
-                    a: Theme.of(context).textTheme.bodyText1!.copyWith(color: sarBlue, decoration: TextDecoration.underline),
-                    h2: Theme.of(context).textTheme.bodyText1!.copyWith(fontWeight: FontWeight.bold),
+                    a: Theme.of(context).textTheme.bodyMedium!.copyWith(color: sarBlue, decoration: TextDecoration.underline),
+                    h2: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                   // Custom Bilder mit rounded Edges:
                   imageBuilder: (Uri uri, _, __) {

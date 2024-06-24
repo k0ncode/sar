@@ -12,8 +12,6 @@ ThemeData theme = ThemeData(
     onSecondary: Colors.white,
     error: Colors.red,
     onError: Colors.white,
-    background: Colors.white,
-    onBackground: Colors.black,
     surface: Colors.white,
     onSurface: Colors.black,
   ),
@@ -24,7 +22,7 @@ ThemeData theme = ThemeData(
     ),
   ),
   textTheme: const TextTheme(
-    bodyText1: TextStyle(
+    bodyMedium: TextStyle(
       fontWeight: FontWeight.normal,
       fontSize: 18,
       height: 1.5,
@@ -34,7 +32,7 @@ ThemeData theme = ThemeData(
 
 // ButtonStyle für große blaue ElevatedButtons
 ButtonStyle roundedButtonStyle = ButtonStyle(
-  minimumSize: MaterialStateProperty.all(const Size(double.infinity, 48)),
-  backgroundColor: MaterialStateProperty.all(sarBlue),
-  shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+  minimumSize: WidgetStateProperty.all(const Size(double.infinity, 48)),
+  backgroundColor: WidgetStateProperty.all(sarBlue),
+  shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
 );

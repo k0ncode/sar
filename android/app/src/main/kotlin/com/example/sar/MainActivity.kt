@@ -1,0 +1,5 @@
+package sar.app
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity()

@@ -4,7 +4,7 @@ import 'package:sar/pages/impressum.dart';
 import 'package:sar/pages/navigate_to.dart';
 
 class AppInfo extends StatelessWidget {
-  const AppInfo({Key? key}) : super(key: key);
+  const AppInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class AppInfo extends StatelessWidget {
                   const SizedBox(height: 16),
                   Text(
                     "Digitale Schulbroschüre \n der Schule am Ried",
-                    style: Theme.of(context).textTheme.bodyText1!.copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
@@ -35,16 +35,16 @@ class AppInfo extends StatelessWidget {
                   const SizedBox(height: 8),
                   TextButton(
                     onPressed: () => navigateTo(const Impressum(), context),
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [Text("Impressum"), SizedBox(width: 4), Icon(Icons.launch)],
+                      children: [Text("Impressum"), SizedBox(width: 4), Icon(Icons.launch)],
                     ),
                   ),
                   TextButton(
                     onPressed: () => showLicensePage(context: context),
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const [Text("Open-Source Lizenzen"), SizedBox(width: 4), Icon(Icons.launch)],
+                      children: [Text("Open-Source Lizenzen"), SizedBox(width: 4), Icon(Icons.launch)],
                     ),
                   ),
                   const Expanded(flex: 1, child: SizedBox()),

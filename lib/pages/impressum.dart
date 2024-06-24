@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sar/widgets/text_page.dart';
 
 class Impressum extends StatelessWidget {
-  const Impressum({Key? key}) : super(key: key);
+  const Impressum({super.key});
 
   @override
   Widget build(BuildContext context) {

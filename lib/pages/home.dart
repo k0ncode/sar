@@ -8,7 +8,7 @@ import 'package:sar/pages/informationen.dart';
 import 'package:sar/pages/news.dart';
 
 class Startseite extends StatelessWidget {
-  const Startseite({Key? key}) : super(key: key);
+  const Startseite({super.key});
 
   @override
   Widget build(BuildContext context) {

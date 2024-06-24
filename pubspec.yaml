@@ -3,24 +3,24 @@ description: Schulbroschüren App der Schule am Ried
 
 publish_to: 'none' # Do not remove!
 
-version: 2.0.0+5 # Hier Version der App ändern (die Zahl nach dem + bei jeder Versionsänderung um 1 erhöhen!)
+version: 2.5.0+6 # Hier Version der App ändern (die Zahl nach dem + bei jeder Versionsänderung um 1 erhöhen!)
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=3.4.3 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   animations: ^2.0.0
   cached_network_image: ^3.0.0
-  flutter_launcher_icons: ^0.9.0
-  flutter_markdown: ^0.6.2
-  package_info: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_markdown: ^0.7.2+1
   url_launcher: ^6.0.2
-  mobile_scanner: ^2.1.0
+  mobile_scanner: ^5.1.1
+  package_info_plus: ^8.0.0
 
 dev_dependencies: 
-  flutter_lints: ^1.0.4
+  flutter_lints: ^4.0.0
 
 flutter_icons:
   android: "launcher_icon"

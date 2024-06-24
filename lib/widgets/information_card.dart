@@ -9,12 +9,11 @@ class InformationCard extends StatelessWidget {
   final String imageIndex; // Bild der Card (optinal)
   final String textFile; // Text Datei, aus der der Text stammen soll
   const InformationCard(
-      {Key? key,
+      {super.key,
       this.title = "Titel",
       this.text = "Text...",
       this.imageIndex = "",
-      required this.textFile})
-      : super(key: key);
+      required this.textFile});
 
   @override
   Widget build(BuildContext context) {
@@ -48,13 +47,13 @@ class InformationCard extends StatelessWidget {
                       title: Text(title,
                           style: Theme.of(context)
                               .textTheme
-                              .bodyText1!
+                              .bodyMedium!
                               .copyWith(fontWeight: FontWeight.bold)),
                       subtitle: Text(
                         text,
                         style: Theme.of(context)
                             .textTheme
-                            .bodyText1!
+                            .bodyMedium!
                             .copyWith(fontSize: 14),
                         overflow: TextOverflow.ellipsis,
                         maxLines: (imageIndex.isNotEmpty) ? 3 : 1,

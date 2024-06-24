@@ -1,16 +1,77 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class QRCodeScanner extends StatefulWidget {
-  const QRCodeScanner({Key? key}) : super(key: key);
+  const QRCodeScanner({super.key});
 
   @override
   State<QRCodeScanner> createState() => _QRCodeScannerState();
 }
 
-class _QRCodeScannerState extends State<QRCodeScanner> {
-  MobileScannerController cameraController = MobileScannerController();
+class _QRCodeScannerState extends State<QRCodeScanner> with WidgetsBindingObserver {
+  final MobileScannerController controller = MobileScannerController();
+  Barcode? barcode;
+  StreamSubscription<Object?>? subscription;
+
+  Widget buildBarcode(Barcode? value) {
+    if (value == null) {
+      return const Text(
+        "Bitte scannen",
+        overflow: TextOverflow.fade,
+        style: TextStyle(color: Colors.white),
+      );
+    } else {
+      return Text(
+        value.displayValue ?? "nicht anzeigbar",
+        overflow: TextOverflow.fade,
+        style: const TextStyle(color: Colors.white),
+      );
+    }
+  }
+
+  void handleBarcode(BarcodeCapture barcodes) {
+    if (mounted) {
+      setState(() {
+        barcode = barcodes.barcodes.firstOrNull;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+
+    subscription = controller.barcodes.listen(handleBarcode);
+
+    unawaited(controller.start());
+  }
+
+  // boilerplate:
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (!controller.value.isInitialized) {
+      return;
+    }
+
+    switch (state) {
+      case AppLifecycleState.detached:
+      case AppLifecycleState.hidden:
+      case AppLifecycleState.paused:
+        return;
+      case AppLifecycleState.resumed:
+        subscription = controller.barcodes.listen(handleBarcode);
+
+        unawaited(controller.start());
+      case AppLifecycleState.inactive:
+        unawaited(subscription?.cancel());
+        subscription = null;
+        unawaited(controller.stop());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,48 +81,61 @@ class _QRCodeScannerState extends State<QRCodeScanner> {
         actions: [
           IconButton(
             color: Colors.white,
+            iconSize: 32.0,
+            onPressed: () async => await controller.toggleTorch(),
             icon: ValueListenableBuilder(
-              valueListenable: cameraController.torchState,
+              valueListenable: controller,
               builder: (context, state, child) {
-                switch (state as TorchState) {
-                  case TorchState.off:
-                    return const Icon(Icons.flash_on);
-                  case TorchState.on:
-                    return const Icon(Icons.flash_off);
+                if (state.isInitialized && state.isRunning) {
+                  switch (state.torchState) {
+                    case TorchState.auto:
+                      const Icon(Icons.flash_auto);
+                    case TorchState.off:
+                      const Icon(Icons.flash_off);
+                    case TorchState.on:
+                      const Icon(Icons.flash_on);
+                    default:
+                      return const Icon(
+                        Icons.no_flash,
+                        color: Colors.grey,
+                      );
+                  }
                 }
+                return const SizedBox.shrink();
               },
             ),
-            onPressed: () => cameraController.toggleTorch(),
-          )
+          ),
         ],
       ),
       body: Stack(children: [
         MobileScanner(
-          allowDuplicates: false,
-          controller: cameraController,
-          onDetect: (qrcode, args) async {
-            if (qrcode.rawValue == null) {
-              debugPrint("Failed to scan QR-Code");
-            } else {
-              final String qrCodeValue = qrcode.rawValue!;
-              final Uri url = Uri.parse(qrCodeValue);
-              if (await canLaunchUrl(url)) {
-                await launchUrl(url, mode: LaunchMode.externalApplication);
-              } else {
-                debugPrint("$url kann nicht geöffnet werden");
-              }
-              debugPrint("QR-Code found: $qrCodeValue");
-            }
-          },
+          controller: controller,
+          fit: BoxFit.contain,
         ),
-        Center(
+        Align(
+          alignment: Alignment.bottomCenter,
           child: Container(
-            height: 200,
-            width: 200,
-            decoration: BoxDecoration(border: Border.all(color: Colors.white, width: 5)),
+            alignment: Alignment.bottomCenter,
+            height: 100,
+            color: Colors.black.withOpacity(0.4),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(child: Center(child: buildBarcode(barcode))),
+              ],
+            ),
           ),
         ),
       ]),
     );
+  }
+
+  @override
+  Future<void> dispose() async {
+    WidgetsBinding.instance.removeObserver(this);
+    unawaited(subscription?.cancel());
+    subscription = null;
+    super.dispose();
+    await controller.dispose();
   }
 }
