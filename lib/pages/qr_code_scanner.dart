@@ -1,42 +1,28 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class QRCodeScanner extends StatefulWidget {
   const QRCodeScanner({super.key});
 
   @override
-  State<QRCodeScanner> createState() => _QRCodeScannerState();
+  State<QRCodeScanner> createState() => QRCodeScannerState();
 }
 
-class _QRCodeScannerState extends State<QRCodeScanner> with WidgetsBindingObserver {
-  final MobileScannerController controller = MobileScannerController();
-  Barcode? barcode;
+class QRCodeScannerState extends State<QRCodeScanner> with WidgetsBindingObserver {
+  MobileScannerController controller = MobileScannerController(
+    formats: [BarcodeFormat.qrCode],
+    detectionSpeed: DetectionSpeed.noDuplicates,
+  );
+
   StreamSubscription<Object?>? subscription;
 
-  Widget buildBarcode(Barcode? value) {
-    if (value == null) {
-      return const Text(
-        "Bitte scannen",
-        overflow: TextOverflow.fade,
-        style: TextStyle(color: Colors.white),
-      );
-    } else {
-      return Text(
-        value.displayValue ?? "nicht anzeigbar",
-        overflow: TextOverflow.fade,
-        style: const TextStyle(color: Colors.white),
-      );
-    }
-  }
-
-  void handleBarcode(BarcodeCapture barcodes) {
-    if (mounted) {
-      setState(() {
-        barcode = barcodes.barcodes.firstOrNull;
-      });
+  void handleQRCode(BarcodeCapture capture) async {
+    final String qrCodeValue = capture.barcodes.first.displayValue!;
+    final Uri url = Uri.parse(qrCodeValue);
+    if (!await launchUrl(url)) {
+      debugPrint("Could not launch URL");
     }
   }
 
@@ -44,13 +30,10 @@ class _QRCodeScannerState extends State<QRCodeScanner> with WidgetsBindingObserv
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-
-    subscription = controller.barcodes.listen(handleBarcode);
-
+    subscription = controller.barcodes.listen(handleQRCode);
     unawaited(controller.start());
   }
 
-  // boilerplate:
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (!controller.value.isInitialized) {
@@ -63,8 +46,7 @@ class _QRCodeScannerState extends State<QRCodeScanner> with WidgetsBindingObserv
       case AppLifecycleState.paused:
         return;
       case AppLifecycleState.resumed:
-        subscription = controller.barcodes.listen(handleBarcode);
-
+        subscription = controller.barcodes.listen(handleQRCode);
         unawaited(controller.start());
       case AppLifecycleState.inactive:
         unawaited(subscription?.cancel());
@@ -78,54 +60,37 @@ class _QRCodeScannerState extends State<QRCodeScanner> with WidgetsBindingObserv
     return Scaffold(
       appBar: AppBar(
         title: const Text("QR-Code Scanner"),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
         actions: [
           IconButton(
             color: Colors.white,
-            iconSize: 32.0,
-            onPressed: () async => await controller.toggleTorch(),
             icon: ValueListenableBuilder(
               valueListenable: controller,
               builder: (context, state, child) {
-                if (state.isInitialized && state.isRunning) {
-                  switch (state.torchState) {
-                    case TorchState.auto:
-                      const Icon(Icons.flash_auto);
-                    case TorchState.off:
-                      const Icon(Icons.flash_off);
-                    case TorchState.on:
-                      const Icon(Icons.flash_on);
-                    default:
-                      return const Icon(
-                        Icons.no_flash,
-                        color: Colors.grey,
-                      );
-                  }
+                switch (state.torchState) {
+                  case TorchState.off:
+                    return const Icon(Icons.flash_on);
+                  case TorchState.on:
+                    return const Icon(Icons.flash_off);
+                  case TorchState.auto:
+                    return const Icon(Icons.flash_auto);
+                  default:
+                    return const SizedBox.shrink();
                 }
-                return const SizedBox.shrink();
               },
             ),
-          ),
+            onPressed: () => controller.toggleTorch(),
+          )
         ],
       ),
       body: Stack(children: [
         MobileScanner(
           controller: controller,
-          fit: BoxFit.contain,
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
+        Center(
           child: Container(
-            alignment: Alignment.bottomCenter,
-            height: 100,
-            color: Colors.black.withOpacity(0.4),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(child: Center(child: buildBarcode(barcode))),
-              ],
-            ),
+            height: 200,
+            width: 200,
+            decoration: BoxDecoration(border: Border.all(color: Colors.white, width: 5)),
           ),
         ),
       ]),
