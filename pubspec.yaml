@@ -28,7 +28,7 @@ flutter_icons:
   image_path: "assets/icon/icon.png"
   adaptive_icon_foreground: "assets/icon/icon_foreground.png"
   adaptive_icon_background: "#ff253185"
-# Command um Launcher Icon zu generieren: flutter pub run flutter_launcher_icons:main
+# Command um Launcher Icon zu generieren: flutter pub run flutter_launcher_icons
 
 flutter:
   uses-material-design: true
