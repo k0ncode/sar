@@ -14,6 +14,7 @@ class QRCodeScannerState extends State<QRCodeScanner> with WidgetsBindingObserve
   MobileScannerController controller = MobileScannerController(
     formats: [BarcodeFormat.qrCode],
     detectionSpeed: DetectionSpeed.noDuplicates,
+    detectionTimeoutMs: 750,
   );
 
   StreamSubscription<Object?>? subscription;
