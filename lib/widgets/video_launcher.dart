@@ -14,10 +14,8 @@ class VideoLauncher extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       child: GestureDetector(
         onTap: () async {
-          if (await canLaunchUrl(youtubeUrl)) {
-            await launchUrl(youtubeUrl, mode: LaunchMode.externalNonBrowserApplication);
-          } else {
-            print("${youtubeUrlString}Kann nicht geöffnet werden");
+          if (!await launchUrl(youtubeUrl, mode: LaunchMode.externalNonBrowserApplication)) {
+            debugPrint("Could not launch Youtube-URL");
           }
         },
         child: Stack(

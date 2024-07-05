@@ -54,10 +54,8 @@ class TextPage extends StatelessWidget {
                   // Funktion, die aufgerufen wird, wenn ein Link im Text gedrückt wird:
                   onTapLink: (_, urlString, __) async {
                     final Uri url = Uri.parse(urlString!);
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url, mode: LaunchMode.externalApplication);
-                    } else {
-                      debugPrint("$url kann nicht geöffnet werden");
+                    if (!await launchUrl(url)) {
+                      debugPrint("Could not launch URL");
                     }
                   },
                 ),
